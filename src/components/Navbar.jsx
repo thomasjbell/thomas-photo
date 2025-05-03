@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="font-bold text-xl text-gray-800">
-              Modern Photography
+              Thomas J Bell
             </Link>
           </div>
 

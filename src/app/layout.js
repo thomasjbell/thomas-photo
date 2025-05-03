@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Modern Photography",
+  title: "Thomas J Bell",
   description: "A showcase of modern photography work and services",
 };
 
