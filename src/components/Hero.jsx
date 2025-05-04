@@ -36,10 +36,10 @@ export default function Hero() {
               View Portfolio
             </Link>
             <Link
-              href="/contact"
+              href="/about"
               className="bg-slate-700/60 text-slate-100 hover:bg-slate-800/80 py-3 px-8 rounded-md font-medium text-center"
             >
-              Contact Me
+              About Me
             </Link>
           </div>
         </div>
