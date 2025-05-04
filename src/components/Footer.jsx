@@ -7,17 +7,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Modern Photography</h3>
+            <h3 className="text-xl font-bold mb-4">Thomas J Bell Photography</h3>
             <p className="text-slate-500">
-              Professional photography services capturing your most precious
-              moments.
+              Amateur Photography and Videography by Thomas J Bell
             </p>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
             <address className="not-italic text-slate-500">
-              <p>123 Photography St.</p>
-              <p>New York, NY 10001</p>
+              <p>Milton Keynes</p>
+              <p>England</p>
               <p className="mt-2">
                 <a
                   href="mailto:info@modernphotography.com"
@@ -79,7 +78,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Modern Photography. All rights
+            &copy; {new Date().getFullYear()} Thomas J Bell Photography. All rights
             reserved.
           </p>
 

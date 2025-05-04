@@ -26,12 +26,7 @@ export default function Navbar() {
             >
               Portfolio
             </Link>
-            <Link
-              href="/services"
-              className="text-gray-600 hover:text-gray-900"
-            >
-              Services
-            </Link>
+
             <Link href="/about" className="text-gray-600 hover:text-gray-900">
               About
             </Link>
@@ -96,12 +91,7 @@ export default function Navbar() {
             >
               Portfolio
             </Link>
-            <Link
-              href="/services"
-              className="block px-3 py-2 text-gray-600 hover:text-gray-900"
-            >
-              Services
-            </Link>
+
             <Link
               href="/about"
               className="block px-3 py-2 text-gray-600 hover:text-gray-900"

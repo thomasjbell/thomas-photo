@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import bgImage from "./public/images/bg.png";
 
 export default function Hero() {
   return (
@@ -8,7 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <div className="absolute inset-0">
           <Image
-            src="/images/bg.png"
+            src={bgImage}
             alt="Background image"
             className="absolute inset-0 object-cover w-full h-full relative opacity-80"
             width={2560}

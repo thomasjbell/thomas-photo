@@ -21,7 +21,6 @@ export default function PortfolioPage() {
           <Portfolio />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
