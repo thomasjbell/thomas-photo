@@ -1,28 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import BackgroundImage from "./bg.png";
 
 export default function Hero() {
   return (
     <div className="relative h-screen">
       {/* Background image */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent opacity-70"></div>
-        <div className="h-full w-full relative">
+        <div className="absolute inset-0">
           <Image
-            src={BackgroundImage}
+            src="/images/bg.png"
             alt="Background image"
-            width={500}
-            height={500}
+            className="absolute inset-0 object-cover w-full h-full relative opacity-80"
+            width={2560}
+            height={100}
           />
-          <div className="absolute inset-0 bg-gray-800"></div>
         </div>
       </div>
 
       {/* Hero content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-full">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center content-center h-full">
         <div className="text-white max-w-2xl">
-          <h1 className="text-centre text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="items-centre text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             THOMAS J BELL
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl mb-8">PHOTOGRAPHY</p>
