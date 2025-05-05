@@ -4,8 +4,8 @@ import { portfolioItems } from "../utils/constants";
 
 export default function Portfolio() {
   return (
-    <section className="py-16 bg-gray-50" id="portfolio">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 bg-gray-50 rounded-lg" id="portfolio">
+      <div className="mx-auto px-2 sm:px-4 lg:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Portfolio</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -15,15 +15,15 @@ export default function Portfolio() {
         </div>
 
         {/* Portfolio grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {portfolioItems.map((item) => (
             <div
               key={item.id}
-              className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow group"
+              className="relative overflow-hidden shadow-md hover:shadow-lg transition-shadow group"
             >
               <div className="relative w-full">
-                <Image 
-                  src={item.imagePath} 
+                <Image
+                  src={item.imagePath}
                   alt={item.title}
                   width={500}
                   height={500}
