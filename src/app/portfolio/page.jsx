@@ -8,21 +8,23 @@ export default function PortfolioPage() {
     <div className="">
       <Navbar />
       <section className="py-12 bg-slate-50 dark:bg-slate-900" id="portfolio">
-        <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-50 mb-4">Portfolio</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-50 mb-4">
+              Portfolio
+            </h2>
             <p className="text-lg text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
               Explore a selection of my best work across different photography
               categories.
             </p>
           </div>
 
-          {/* Portfolio grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          {/* Mosaic Portfolio Grid */}
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-4 space-y-4">
             {portfolioItems.map((item) => (
               <div
                 key={item.id}
-                className="relative overflow-hidden shadow-md hover:shadow-lg transition-shadow group"
+                className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-300"
               >
                 <div className="relative w-full">
                   <Image
@@ -31,7 +33,7 @@ export default function PortfolioPage() {
                     width={500}
                     height={500}
                     className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                   />
                   {/* Overlay with title */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
@@ -45,6 +47,7 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
