@@ -1,9 +1,27 @@
-import Navbar from "@/components/Navbar";
+'use client';
 
+import Navbar from "@/components/Navbar";
 import { portfolioItems } from "../../utils/constants";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function PortfolioPage() {
+  const [randomizedItems, setRandomizedItems] = useState([]);
+  
+  useEffect(() => {
+    // Create a shuffled copy of the portfolio items
+    const shuffleArray = (array) => {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+    };
+    
+    setRandomizedItems(shuffleArray(portfolioItems));
+  }, []);
+
   return (
     <div className="">
       <Navbar />
@@ -21,7 +39,7 @@ export default function PortfolioPage() {
 
           {/* Mosaic Portfolio Grid */}
           <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3">
-            {portfolioItems.map((item) => (
+            {randomizedItems.map((item) => (
               <div
                 key={item.id}
                 className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-300"
