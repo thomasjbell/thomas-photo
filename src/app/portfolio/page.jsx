@@ -28,10 +28,10 @@ export default function PortfolioPage() {
       <section className="py-12 bg-slate-50 dark:bg-slate-900" id="portfolio">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-50 mb-4">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-4">
               Portfolio
             </h2>
-            <p className="text-lg text-gray-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               Explore a selection of my best work across different photography
               categories.
             </p>

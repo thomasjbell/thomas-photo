@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // You can add custom colors here
+      
       },
       fontFamily: {
         // Custom font families can go here

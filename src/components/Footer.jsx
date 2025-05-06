@@ -28,7 +28,7 @@ export default function Footer() {
 
               <p className="mt-2">
                 <a
-                  href="mailto:info@modernphotography.com"
+                  href="mailto:thomas@thomasjbell.co.uk"
                   className="hover:text-slate-100 dark:hover:text-slate-300"
                 >
                   thomas@thomasjbell.co.uk
@@ -86,7 +86,7 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://equalab.uk/"
-              className="text-slate-300 hover:text-white"
+              className="text-slate-300 hover:text-slate-50"
             >
               <span className="sr-only">EquaLab</span>
               <Bird width={16} height={16} fill="cuurentColor" />
@@ -94,7 +94,7 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://www.instagram.com/thomas.j.bell/"
-              className="text-slate-300 hover:text-white"
+              className="text-slate-300 hover:text-slate-50"
             >
               <span className="sr-only">Instagram</span>
               <svg
@@ -112,7 +112,7 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://www.linkedin.com/in/thomasbell2/"
-              className="text-slate-300 hover:text-white"
+              className="text-slate-300 hover:text-slate-50"
             >
               <span className="sr-only">LinkedIn</span>
               <svg

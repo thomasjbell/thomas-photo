@@ -39,11 +39,12 @@ export default function Navbar() {
             >
               About
             </Link>
+            <p className="text-slate-600 dark:text-slate-50">|</p>
             <Link
-              href="/contact"
+              href="/equalab"
               className="text-slate-600 hover:text-slate-900 dark:text-slate-50 dark:hover:text-slate-300"
             >
-              Contact
+              EquaLab
             </Link>
           </div>
 
