@@ -1,7 +1,7 @@
 export const portfolioItems = [
   {
     id: 1,
-    title: "Windmill",
+    title: "Windmill Sunset",
     imagePath: "/portfolio/windmill.png",
   },
   {
@@ -33,5 +33,45 @@ export const portfolioItems = [
     id: 7,
     title: "Bluebell Wood",
     imagePath: "/portfolio/bluebell-wood.png",
+  },
+  {
+    id: 8,
+    title: "Saturday Job",
+    imagePath: "/portfolio/saturday-job.png",
+  },
+  {
+    id: 9,
+    title: "Peregrin Falcon",
+    imagePath: "/portfolio/peregrin-falcon.png",
+  },
+  {
+    id: 10,
+    title: "Green Tree",
+    imagePath: "/portfolio/green-tree.png",
+  },
+  {
+    id: 11,
+    title: "Factory Sunset",
+    imagePath: "/portfolio/factory.png",
+  },
+  {
+    id: 12,
+    title: "Baby Eagle Owl",
+    imagePath: "/portfolio/baby-eagle-owl.png",
+  },
+  {
+    id: 13,
+    title: "Frosty Sunrise",
+    imagePath: "/portfolio/frosty-sunrise.png",
+  },
+  {
+    id: 14,
+    title: "Crow",
+    imagePath: "/portfolio/crow.png",
+  },
+  {
+    id: 15,
+    title: "G-ARUL LeVier Cosmic Wind",
+    imagePath: "/portfolio/g-arul-plane.png",
   },
 ];

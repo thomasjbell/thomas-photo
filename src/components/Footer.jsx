@@ -11,14 +11,21 @@ export default function Footer() {
               Thomas J Bell Photography
             </h3>
             <p className="text-slate-500 dark:text-slate-600">
-              Amateur Photography and Videography by Thomas J Bell
+              Amateur Photography by
+              <br />Thomas J Bell
             </p>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
             <address className="not-italic text-slate-500 dark:text-slate-600">
-              <p>Milton Keynes</p>
-              <p>England</p>
+              <a
+                href="https://maps.app.goo.gl/9HhU5P1jAEBxHHRe6"
+                className="hover:text-slate-100 dark:hover:text-slate-300"
+              >
+                <p>Milton Keynes</p>
+                <p>England</p>
+              </a>
+
               <p className="mt-2">
                 <a
                   href="mailto:info@modernphotography.com"
@@ -27,14 +34,16 @@ export default function Footer() {
                   thomas@thomasjbell.co.uk
                 </a>
               </p>
-             
             </address>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-slate-500 hover:text-slate-100 dark:text-slate-600 dark:hover:text-slate-300">
+                <Link
+                  href="/"
+                  className="text-slate-500 hover:text-slate-100 dark:text-slate-600 dark:hover:text-slate-300"
+                >
                   Home
                 </Link>
               </li>
@@ -46,8 +55,7 @@ export default function Footer() {
                   Portfolio
                 </Link>
               </li>
-             
-            
+
               <li>
                 <Link
                   href="/about"
