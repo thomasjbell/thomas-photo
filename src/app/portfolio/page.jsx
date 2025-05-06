@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import Portfolio from "@/components/Portfolio";
 import Footer from "@/components/Footer";
 import { portfolioItems } from "../../utils/constants";
 import Image from "next/image";

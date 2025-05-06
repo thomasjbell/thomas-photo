@@ -1,47 +1,37 @@
 export const portfolioItems = [
-    {
-      id: 1,
-      title: "Urban Portrait",
-      imagePath: "/portfolio/urban-portrait.jpg",
-    },
-    {
-      id: 2,
-      title: "Beach Wedding",
-      imagePath: "/portfolio/beach-wedding.jpg",
-    },
-    {
-      id: 3,
-      title: "Corporate Event",
-      imagePath: "/portfolio/corporate-event.jpg",
-    },
-    {
-      id: 4,
-      title: "Product Shoot",
-      imagePath: "/portfolio/product-shoot.jpg",
-    },
-    {
-      id: 5,
-      title: "Family Portrait",
-      imagePath: "/portfolio/family-portrait.jpg",
-    },
-    {
-      id: 6,
-      title: "Garden Wedding",
-      imagePath: "/portfolio/garden-wedding.jpg",
-    },
-    {
-      id: 7,
-      title: "Music Festival",
-      imagePath: "/portfolio/music-festival.jpg",
-    },
-    {
-      id: 8,
-      title: "Fashion Campaign",
-      imagePath: "/portfolio/fashion-campaign.jpg",
-    },
-    {
-      id: 9,
-      title: "Studio Portrait",
-      imagePath: "/portfolio/studio-portrait.jpg",
-    },
-  ];
+  {
+    id: 1,
+    title: "Windmill",
+    imagePath: "/portfolio/windmill.png",
+  },
+  {
+    id: 2,
+    title: "Lone Tree",
+    imagePath: "/portfolio/lone-tree.png",
+  },
+  {
+    id: 3,
+    title: "Hillman Imp",
+    imagePath: "/portfolio/hillman-imp.png",
+  },
+  {
+    id: 4,
+    title: "GT40 Rear",
+    imagePath: "/portfolio/gt40-rear.png",
+  },
+  {
+    id: 5,
+    title: "GT40 Exhaust",
+    imagePath: "/portfolio/gt40-exhaust.png",
+  },
+  {
+    id: 6,
+    title: "Golf GTI Cabriolet",
+    imagePath: "/portfolio/golf-gti-cabrio.png",
+  },
+  {
+    id: 7,
+    title: "Bluebell Wood",
+    imagePath: "/portfolio/bluebell-wood.png",
+  },
+];
