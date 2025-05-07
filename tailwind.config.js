@@ -26,6 +26,10 @@ module.exports = {
         accent: {
           DEFAULT: '#fb923c', // Similar to orange-400
           dark: '#f97316',   // Similar to orange-500
+        },
+        black: {
+          main: '#171717',
+          
         }
       },
       fontFamily: {

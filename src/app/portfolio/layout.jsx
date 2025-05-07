@@ -2,7 +2,7 @@
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  title: "Photography Portfolio | Thomas J Bell",
+  title: "Thomas J Bell | Photography Portfolio",
   description: "Browse through a collection of stunning photographs including landscapes, wildlife, and automotive photography by Thomas J Bell.",
   keywords: "photography portfolio, Thomas Bell, landscape photos, wildlife photography, automotive photography",
   openGraph: {

@@ -3,7 +3,7 @@ import { Bird } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-400 dark:bg-slate-950 dark:text-slate-500 py-12">
+    <footer className="bg-slate-800 text-slate-400 dark:bg-slate-950 dark:text-slate-500 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -21,6 +21,8 @@ export default function Footer() {
               <a
                 href="https://maps.app.goo.gl/9HhU5P1jAEBxHHRe6"
                 className="hover:text-slate-100 dark:hover:text-slate-300"
+                target="_blank"
+                
               >
                 <p>Milton Keynes</p>
                 <p>England</p>
@@ -64,14 +66,7 @@ export default function Footer() {
                   About
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-slate-500 hover:text-slate-100 dark:text-slate-600 dark:hover:text-slate-300"
-                >
-                  Contact
-                </Link>
-              </li>
+             
             </ul>
           </div>
         </div>

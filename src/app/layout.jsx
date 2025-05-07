@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Thomas J Bell Photography",
+  title: "Thomas J Bell | Photography",
   description: "Photography portfolio by Thomas J Bell",
 };
 

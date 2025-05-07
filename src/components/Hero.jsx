@@ -1,5 +1,5 @@
 // components/Hero.jsx
-'use client';
+"use client";
 
 import Image from "next/image";
 import { Caveat } from "next/font/google";
@@ -14,27 +14,28 @@ export default function Hero() {
 
   useEffect(() => {
     // Check if user prefers dark mode
-    if (typeof window !== 'undefined') {
-      const isDark = localStorage.getItem('darkMode') === 'true' || 
-                      window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (typeof window !== "undefined") {
+      const isDark =
+        localStorage.getItem("darkMode") === "true" ||
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
       setIsDarkMode(isDark);
       if (isDark) {
-        document.documentElement.classList.add('dark');
+        document.documentElement.classList.add("dark");
       }
     }
   }, []);
 
   const toggleDarkMode = () => {
     if (isDarkMode) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('darkMode', 'false');
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("darkMode", "false");
     } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('darkMode', 'true');
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("darkMode", "true");
     }
     setIsDarkMode(!isDarkMode);
   };
-  
+
   return (
     <div className="relative h-screen">
       {/* Background image */}
@@ -42,22 +43,27 @@ export default function Hero() {
         <Image
           src="/images/background.png"
           alt="Background image"
-          className="inset-0 object-cover w-full h-full opacity-80 dark:opacity-60"
+          className="relative inset-0 object-cover w-full h-full brightness-80"
           width={2560}
           height={100}
           priority
         />
-        <div className="absolute inset-0 bg-black/20 dark:bg-black/50"></div>
       </div>
-      
+
       {/* Dark mode toggle button */}
       <div className="absolute top-4 right-4 z-20">
         <button
           onClick={toggleDarkMode}
           className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-          aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+          aria-label={
+            isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+          }
         >
-          {isDarkMode ? <Sun className="w-5 h-5 text-white" /> : <Moon className="w-5 h-5 text-white" />}
+          {isDarkMode ? (
+            <Sun className="w-5 h-5 text-white" />
+          ) : (
+            <Moon className="w-5 h-5 text-white" />
+          )}
         </button>
       </div>
 
@@ -70,21 +76,15 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="text-lg sm:text-xl md:text-2xl mb-8">P H O T O G R A P H Y</p>
+          <p className="text-lg sm:text-xl md:text-2xl mb-8">
+            P H O T O G R A P H Y
+          </p>
           <div className="flex flex-col sm:flex-row gap-4">
             {/* Replace Links with Button components using outline variant */}
-            <Button
-              href="/portfolio"
-              variant="outline"
-              size="medium"
-            >
+            <Button href="/portfolio" variant="outline" size="medium">
               View Portfolio
             </Button>
-            <Button
-              href="/about"
-              variant="outline"
-              size="medium"
-            >
+            <Button href="/about" variant="outline" size="medium">
               About Me
             </Button>
           </div>
