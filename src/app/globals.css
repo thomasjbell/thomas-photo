@@ -1,26 +1,24 @@
+/* globals.css */
 @import "tailwindcss";
 
 :root {
-  --background: #171717;
-  --foreground: #171717;
+  --background: #f8fafc; /* slate-50 for light mode */
+  --foreground: #0f172a; /* slate-900 for light mode */
+}
+
+html.dark {
+  --background: #0f172a; /* slate-900 for dark mode */
+  --foreground: #f8fafc; /* slate-50 for dark mode */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171717;
-    --foreground: #171717;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
 }
-
