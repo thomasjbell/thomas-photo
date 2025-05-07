@@ -1,6 +1,8 @@
 // app/about/page.jsx
+'use client';
+
 import Image from "next/image";
-import Link from "next/link";
+import Button from "../../components/Button";
 
 export default function AboutPage() {
   return (
@@ -26,12 +28,7 @@ export default function AboutPage() {
               but I love all things science and tech.
             </p>
             <div className="mt-8">
-              <Link
-                href="/contact"
-                className="bg-primary-900 text-primary-50 dark:bg-primary-50 dark:text-primary-900 py-3 px-8 rounded-md hover:bg-primary-800 hover:dark:bg-primary-200 transition-colors duration-300"
-              >
-                Get in Touch
-              </Link>
+              <Button variant="outline" href="/contact">Get in Touch</Button>
             </div>
           </div>
 

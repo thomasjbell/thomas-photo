@@ -2,10 +2,10 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link";
 import { Caveat } from "next/font/google";
 import { Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
+import Button from "./Button"; // Import the Button component
 
 const caveat = Caveat({ subsets: ["latin"] });
 
@@ -50,7 +50,16 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/20 dark:bg-black/50"></div>
       </div>
       
-  
+      {/* Dark mode toggle button */}
+      <div className="absolute top-4 right-4 z-20">
+        <button
+          onClick={toggleDarkMode}
+          className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+          aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          {isDarkMode ? <Sun className="w-5 h-5 text-white" /> : <Moon className="w-5 h-5 text-white" />}
+        </button>
+      </div>
 
       {/* Hero content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center content-center h-full">
@@ -63,18 +72,21 @@ export default function Hero() {
 
           <p className="text-lg sm:text-xl md:text-2xl mb-8">P H O T O G R A P H Y</p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link
+            {/* Replace Links with Button components using outline variant */}
+            <Button
               href="/portfolio"
-              className="bg-primary-700/60 text-primary-100 hover:bg-primary-800/80 py-3 px-8 rounded-md font-medium text-center transition-all duration-300"
+              variant="outline"
+              size="medium"
             >
               View Portfolio
-            </Link>
-            <Link
+            </Button>
+            <Button
               href="/about"
-              className="bg-primary-700/60 text-primary-100 hover:bg-primary-800/80 py-3 px-8 rounded-md font-medium text-center transition-all duration-300"
+              variant="outline"
+              size="medium"
             >
               About Me
-            </Link>
+            </Button>
           </div>
         </div>
       </div>
