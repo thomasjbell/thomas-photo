@@ -33,7 +33,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-primary-50 dark:bg-primary-800 shadow-sm sticky top-0 z-50">
+    <nav className="backdrop-blur-md bg-primary-100/50 dark:bg-primary-900/60 sticky top-0 z-50">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -69,7 +69,7 @@ export default function Navbar() {
             {/* Dark mode toggle */}
             <button 
               onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-primary-200 dark:hover:bg-primary-700"
+              className="p-2 rounded-full hover:bg-primary-200/40 dark:hover:bg-primary-700/40"
               aria-label="Toggle dark mode"
             >
               {isDarkMode ? 
@@ -83,7 +83,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center space-x-4">
             <button 
               onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-primary-200 dark:hover:bg-primary-700"
+              className="p-2 rounded-full hover:bg-primary-200/40 dark:hover:bg-primary-700/40"
               aria-label="Toggle dark mode"
             >
               {isDarkMode ? 
@@ -133,7 +133,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-primary-50 dark:bg-primary-800">
+        <div className="md:hidden backdrop-blur-md bg-primary-100/50 dark:bg-primary-900/60">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               href="/"
