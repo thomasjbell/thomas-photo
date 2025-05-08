@@ -74,4 +74,64 @@ export const portfolioItems = [
     title: "G-ARUL LeVier Cosmic Wind",
     imagePath: "/portfolio/g-arul-plane.png",
   },
+  {
+    id: 16,
+    title: "Alpine A110",
+    imagePath: "/portfolio/alpine-a110.png",
+  },
+  {
+    id: 17,
+    title: "Datsun 260Z",
+    imagePath: "/portfolio/datsun-260z.png",
+  },
+  {
+    id: 18,
+    title: "EMR Passenger Train",
+    imagePath: "/portfolio/emr-train.png",
+  },
+  {
+    id: 19,
+    title: "Fairlie Engine",
+    imagePath: "/portfolio/fairlie-engine.png",
+  },
+  {
+    id: 20,
+    title: "Malhalm Crag",
+    imagePath: "/portfolio/malhalm-crag.png",
+  },
+  {
+    id: 21,
+    title: "Malhalm Tarn",
+    imagePath: "/portfolio/malhalm-tarn.png",
+  },
+  {
+    id: 22,
+    title: "Snowy Owl",
+    imagePath: "/portfolio/snowy-owl.png",
+  },
+  {
+    id: 23,
+    title: "Stowe Bridge",
+    imagePath: "/portfolio/stowe-bridge.png",
+  },
+  {
+    id: 24,
+    title: "Stowe House",
+    imagePath: "/portfolio/stowe-house.png",
+  },
+  {
+    id: 25,
+    title: "Tawny Owl",
+    imagePath: "/portfolio/tawny-owl.png",
+  },
+  {
+    id: 26,
+    title: "Toyota Trueno",
+    imagePath: "/portfolio/trueno.png",
+  },
+  {
+    id: 27,
+    title: "Young Kestrel",
+    imagePath: "/portfolio/young-kestrel.png",
+  },
 ];
