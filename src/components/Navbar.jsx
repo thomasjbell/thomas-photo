@@ -3,12 +3,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Sun, Moon } from "lucide-react";
-import { useDarkMode } from "./DarkModeProvider";
+import DarkModeToggle from "./DarkModeToggle";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <nav className="backdrop-blur-md bg-primary-100/50 dark:bg-primary-900/60 sticky top-0 z-50">
@@ -44,32 +42,14 @@ export default function Navbar() {
               About
             </Link>
             
-            {/* Dark mode toggle - original style */}
-            <button 
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-primary-200/40 dark:hover:bg-primary-700/40"
-              aria-label="Toggle dark mode"
-            >
-              {isDarkMode ? 
-                <Sun className="h-5 w-5 text-primary-50" /> : 
-                <Moon className="h-5 w-5 text-primary-800" />
-              }
-            </button>
+            {/* Dark mode toggle component */}
+            <DarkModeToggle />
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
-            {/* Dark mode toggle for mobile - original style */}
-            <button 
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-primary-200/40 dark:hover:bg-primary-700/40"
-              aria-label="Toggle dark mode"
-            >
-              {isDarkMode ? 
-                <Sun className="h-5 w-5 text-primary-50" /> : 
-                <Moon className="h-5 w-5 text-primary-800" />
-              }
-            </button>
+            {/* Dark mode toggle for mobile */}
+            <DarkModeToggle />
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
