@@ -22,3 +22,19 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Add this to globals.css */
+@media (hover: none) {
+  /* Apply hover styles on touch for devices without hover capability */
+  .group:active .group-hover\:scale-105 {
+    transform: scale(1.05);
+  }
+  
+  .group:active .group-hover\:bg-black\/40 {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .group:active .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+}
