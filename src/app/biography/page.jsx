@@ -1,345 +1,308 @@
-"use-client";
+"use client";
 import Image from "next/image";
+import { useState } from "react";
+import { 
+  Phone, Mail, MapPin, Diff, Atom, Cog, 
+  InspectionPanel, Shield, Cpu, Award, 
+  User, BookOpen, Target, ChevronDown,
+  ExternalLink, Calendar
+} from "lucide-react";
 
-import { Phone } from "lucide-react";
-import { Mail } from "lucide-react";
-import { MapPin } from "lucide-react";
-import { Diff } from "lucide-react";
-import { Atom } from "lucide-react";
-import { Cog } from "lucide-react";
-import { InspectionPanel } from "lucide-react";
-import { Shield } from "lucide-react";
-import { Cpu } from "lucide-react";
+// JSON data structure
+const profileData = {
+  personal: {
+    name: "Thomas Bell",
+    title: "Engineering & Materials Science Student",
+    location: "Milton Keynes, Bucks",
+    email: "thomas@thomasjbell.co.uk",
+    linkedin: "https://www.linkedin.com/in/thomasbell2/",
+    image: "/images/thomas-bell.png",
+    summary: "An enthusiastic, personable and inquisitive student with confident communication skills and a love of learning. I study Engineering, Maths and Physics and am very interested in materials science and experimental/armour defence systems. However, I am fascinated by any kind of advanced technology or engineering projects and love to learn more about physics and tech."
+  },
+  skills: {
+    technical: [
+      "Problem Solving",
+      "CAD & 3D Printing", 
+      "Python Programming",
+      "React Development",
+      "Mathematical Analysis"
+    ],
+    personal: [
+      "Articulate Communication",
+      "Team Leadership", 
+      "Independent Work",
+      "Initiative Taking",
+      "Analytical Thinking"
+    ]
+  },
+  interests: [
+    { name: "Mathematics", icon: Diff, color: "bg-blue-600" },
+    { name: "Physics", icon: Atom, color: "bg-purple-600" },
+    { name: "Engineering", icon: Cog, color: "bg-orange-600" },
+    { name: "Materials Science", icon: InspectionPanel, color: "bg-green-600" },
+    { name: "Armour Defence", icon: Shield, color: "bg-gray-700" },
+    { name: "Advanced Technology", icon: Cpu, color: "bg-indigo-600" }
+  ],
+  hobbies: [
+    { name: "Rock Climbing", emoji: "🧗", description: "Indoor and outdoor climbing" },
+    { name: "Photography", emoji: "📸", description: "Landscape and wildlife" },
+    { name: "Hiking", emoji: "🥾", description: "Mountain and countryside walks" },
+    { name: "Gaming", emoji: "🎮", description: "Strategy and simulation games" },
+    { name: "Piano", emoji: "🎹", description: "Classical and contemporary pieces" }
+  ],
+  qualifications: {
+    current: [
+      { subject: "A Level Mathematics", grade: "A* (Predicted)", level: "A Level" },
+      { subject: "A Level Physics", grade: "A* (Predicted)", level: "A Level" },
+      { subject: "AS Level Computer Science", grade: "A (Predicted)", level: "AS Level" },
+      { subject: "EAL Engineering", grade: "Distinction* (Predicted)", level: "BTEC" }
+    ],
+    achieved: [
+      { subject: "GCSE Mathematics", grade: "8", level: "GCSE" },
+      { subject: "GCSE Physics", grade: "8", level: "GCSE" },
+      { subject: "GCSE Chemistry", grade: "8", level: "GCSE" },
+      { subject: "GCSE Computer Science", grade: "8", level: "GCSE" },
+      { subject: "GCSE English Literature", grade: "7", level: "GCSE" },
+      { subject: "GCSE Product Design", grade: "7", level: "GCSE" },
+      { subject: "GCSE English Language", grade: "6", level: "GCSE" },
+      { subject: "BTEC Digital Information Technology", grade: "Merit", level: "BTEC" },
+      { subject: "Cambridge Nationals Engineering", grade: "Distinction*", level: "Cambridge" },
+      { subject: "EAL Engineering", grade: "Distinction", level: "BTEC" }
+    ]
+  }
+};
+
+const GradeCard = ({ qualification, index }) => {
+  const getGradeColor = (grade) => {
+    if (grade.includes('A*') || grade.includes('Distinction*') || grade === '8' || grade === '9') 
+      return 'bg-emerald-600';
+    if (grade.includes('A') || grade.includes('Distinction') || grade === '7') 
+      return 'bg-blue-600';
+    if (grade.includes('B') || grade.includes('Merit') || grade === '6') 
+      return 'bg-orange-600';
+    return 'bg-gray-600';
+  };
+
+  return (
+    <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-slate-200 dark:border-slate-700 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div className="flex justify-between items-start mb-3">
+        <h4 className="font-semibold text-slate-800 dark:text-slate-200 text-sm leading-tight">
+          {qualification.subject}
+        </h4>
+        <span className="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full">
+          {qualification.level}
+        </span>
+      </div>
+      <div className={`${getGradeColor(qualification.grade)} text-white text-center py-2 px-3 rounded-md font-bold text-sm`}>
+        {qualification.grade}
+      </div>
+    </div>
+  );
+};
 
 export default function BiographyPage() {
+  const [activeSection, setActiveSection] = useState('overview');
+  const [expandedHobby, setExpandedHobby] = useState(null);
+
+  const sections = [
+    { id: 'overview', name: 'Overview', icon: User },
+    { id: 'skills', name: 'Skills', icon: Target },
+    { id: 'interests', name: 'Interests', icon: BookOpen },
+    { id: 'qualifications', name: 'Qualifications', icon: Award }
+  ];
+
   return (
-    <div className="min-h-screen py-14 bg-slate-50 dark:bg-slate-900">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 items-center">
-          <div>
-            {/* Desktop */}
-            <h1 className="hidden lg:block text-4xl font-bold text-right text-slate-900 dark:text-slate-50 my-auto">
-              T H O M A S &nbsp; B E L L
-            </h1>
-            {/* Mobile */}
-            <h1 className="lg:hidden text-4xl font-bold text-center text-slate-900 dark:text-slate-50 my-4">
-              B I O G R A P H Y
-            </h1>
+        
+        {/* Hero Section */}
+        <div className="text-center mb-12">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-slate-700">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              <div className="relative">
+                <Image
+                  src={profileData.personal.image}
+                  alt={profileData.personal.name}
+                  width={200}
+                  height={200}
+                  className="rounded-full border-4 border-slate-200 dark:border-slate-600 shadow-lg"
+                />
+              </div>
+              <div className="flex-1 text-center lg:text-left">
+                <h1 className="text-4xl lg:text-6xl font-bold text-slate-800 dark:text-slate-100 mb-4">
+                  {profileData.personal.name}
+                </h1>
+                <p className="text-xl text-slate-600 dark:text-slate-400 mb-6">
+                  {profileData.personal.title}
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                  <a href={`mailto:${profileData.personal.email}`} 
+                     className="flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors duration-300 border border-blue-200 dark:border-blue-700">
+                    <Mail size={18} />
+                    <span className="text-sm font-medium">Email</span>
+                  </a>
+                  <a href={profileData.personal.linkedin} target="_blank" rel="noopener noreferrer"
+                     className="flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors duration-300 border border-blue-200 dark:border-blue-700">
+                    <ExternalLink size={18} />
+                    <span className="text-sm font-medium">LinkedIn</span>
+                  </a>
+                  <div className="flex items-center gap-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-600">
+                    <MapPin size={18} />
+                    <span className="text-sm font-medium">{profileData.personal.location}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="">
-            <Image
-              src="/images/thomas-bell.png"
-              alt="Thomas Bell"
-              className="mx-auto mb-6 rounded-full drop-shadow-md dark:border-2 border-slate-800 dark:border-slate-50"
-              width={200}
-              height={200}
-            />
-          </div>
-
-          <div>
-          {/* Desktop */}
-            <h1 className="hidden lg:block text-4xl font-bold text-left text-slate-900 dark:text-slate-50 my-auto">
-              B&nbsp;I&nbsp;O&nbsp;G&nbsp;R&nbsp;A&nbsp;P&nbsp;H&nbsp;Y
-            </h1>
-            {/* Mobile */}
-            <h1 className="lg:hidden text-4xl font-bold text-center text-slate-900 dark:text-slate-50 my-4">
-              T&nbsp;H&nbsp;O&nbsp;M&nbsp;A&nbsp;S &nbsp; B&nbsp;E&nbsp;L&nbsp;L
-            </h1>
-          </div>
-
-          <div className="flex justify-center mt-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
-              fill="#64748b"
-              className="bi bi-linkedin"
-              viewBox="0 0 16 16"
-            >
-              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-            </svg>
-            <a
-              href="https://www.linkedin.com/in/thomasbell2/"
-              target="_blank"
-              className="text-slate-900 dark:text-slate-100 hover:scale-103 transition duration-400 ease-in-out hover:drop-shadow-sm"
-            >
-              &nbsp; &nbsp; LinkedIn
-            </a>
-          </div>
-
-          <div className="flex justify-center mt-4">
-            <Mail color="#64748b" />
-            <a
-              href="mailto:thomas@thomasjbell.co.uk"
-              target="_blank"
-              className="text-slate-900 dark:text-slate-100 hover:scale-103 transition duration-400 ease-in-out hover:drop-shadow-sm"
-            >
-              &nbsp; &nbsp; thomas@thomasjbell.co.uk
-            </a>
-          </div>
-
-          <div className="flex justify-center mt-4">
-            <MapPin color="#64748b" />
-            <a
-              href="https://maps.app.goo.gl/9HhU5P1jAEBxHHRe6"
-              target="_blank"
-              className="text-slate-900 dark:text-slate-100 hover:scale-103 transition duration-400 ease-in-out hover:drop-shadow-sm"
-            >
-              &nbsp; &nbsp; Milton Keynes, Bucks
-            </a>
-          </div>
-        </div>
-        <hr className="my-12 border-1 rounded-full border-slate-500" />
-
-        <div>
-          <h2 className="text-3xl text-slate-900 font-bold dark:text-slate-50 text-center my-8 lg:my-12">
-            P&nbsp;E&nbsp;R&nbsp;S&nbsp;O&nbsp;N&nbsp;A&nbsp;L &nbsp; S&nbsp;U&nbsp;M&nbsp;M&nbsp;A&nbsp;R&nbsp;Y
-          </h2>
         </div>
 
-        <p className="text-lg text-slate-800 dark:text-slate-300 mb-6 px-6 text-center justify-center">
-          An enthusiastic, personable and inquisitive student with confident
-          communication skills and a love of learning. I study Engineering,
-          Maths and Physics and am very interested in materials science and
-          experimental/armour defence systems. However, I am fascinated by any
-          kind of advanced technology or engineering projects and love to learn
-          more about physics and tech.
-        </p>
-        <div>
-          <h2 className="text-3xl text-slate-900 font-bold dark:text-slate-50 text-center my-8 lg:my-12 ">
-            S&nbsp;K&nbsp;I&nbsp;L&nbsp;L&nbsp;S, &nbsp; H&nbsp;O&nbsp;B&nbsp;B&nbsp;I&nbsp;E&nbsp;S &nbsp; A&nbsp;N&nbsp;D &nbsp; I&nbsp;N&nbsp;T&nbsp;E&nbsp;R&nbsp;E&nbsp;S&nbsp;T&nbsp;S
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 text-lg text-slate-800 dark:text-slate-300 mb-6 text-center">
-          <div>
-            <h3 className="lg:hidden text-2xl text-slate-900 dark:text-slate-50">S K I L L S</h3>
-            <ul className=" mb-6 text-center  my-2">
-              <li>
-                <p> <span className="text-slate-500">‣</span> &nbsp; &nbsp;Problem Solving</p>
-              </li>
-              <li>
-                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;Numerate</p>
-              </li>
-              <li>
-                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;Articulate</p>
-              </li>
-              <li>
-                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;Team/Independent Work</p>
-              </li>
-              <li>
-                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;CAD, 3D Printing, Python and React</p>
-              </li>
-              <li>
-                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;Initiative</p>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="lg:hidden text-2xl text-slate-900 dark:text-slate-50">H O B B I E S</h3>
-            <ul className="mb-6 text-center my-2">
-              <li>
-                <p>Climbing</p>
-              </li>
-              <hr className="my-2 mx-auto w-48 border-y-1 rounded-full border-slate-500" />
-              <li>
-                <p>Walking</p>
-              </li>
-              <hr className="my-2 mx-auto w-64 border-y-1 rounded-full border-slate-500" />
-              <li>
-                <p>Photography</p>
-              </li>
-              <hr className="my-2 mx-auto w-64 border-y-1 rounded-full border-slate-500" />
-              <li>
-                <p>Gaming</p>
-              </li>
-              <hr className="my-2 mx-auto w-48 border-y-1 rounded-full border-slate-500" />
-              <li>
-                <p>Piano</p>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="lg:hidden text-2xl text-slate-900 dark:text-slate-50">I N T E R E S T S</h3>
-            <ul className="mb-6 text-center my-2">
-              <li>
-                <p className="flex justify-center my-2">
-                  <Diff color="#64748b" /> &nbsp; &nbsp; Maths
-                </p>
-              </li>
-              <li>
-                <p className="flex justify-center my-2">
-                  <Atom color="#64748b" /> &nbsp; &nbsp; Physics
-                </p>
-              </li>
-              <li>
-                <p className="flex justify-center my-2">
-                  <Cog color="#64748b" /> &nbsp; &nbsp;Engineering
-                </p>
-              </li>
-              <li>
-                <p className="flex justify-center my-2">
-                  <InspectionPanel color="#64748b" /> &nbsp; &nbsp;Materials
-                  Science
-                </p>
-              </li>
-              <li>
-                <p className="flex justify-center my-2">
-                  <Shield color="#64748b" /> &nbsp; &nbsp;Armour Defence
-                </p>
-              </li>
-              <li>
-                <p className="flex justify-center my-2">
-                  <Cpu color="#64748b" /> &nbsp; &nbsp;Advanced Technology
-                </p>
-              </li>
-            </ul>
+        {/* Navigation - Made Much More Prominent */}
+        <div className="mb-8">
+          <div className="bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-2">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+              {sections.map((section) => {
+                const Icon = section.icon;
+                return (
+                  <button
+                    key={section.id}
+                    onClick={() => setActiveSection(section.id)}
+                    className={`flex items-center justify-center gap-3 px-6 py-4 rounded-lg transition-all duration-300 font-semibold ${
+                      activeSection === section.id
+                        ? 'bg-blue-600 text-white shadow-md transform scale-[1.02]'
+                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 hover:scale-[1.01]'
+                    }`}
+                  >
+                    <Icon size={20} />
+                    <span className="text-base">{section.name}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
-        <div>
-          <h2 className="text-3xl text-slate-900 font-bold dark:text-slate-300 text-center my-8 lg:my-12">
-            Q&nbsp;U&nbsp;A&nbsp;L&nbsp;I&nbsp;F&nbsp;I&nbsp;C&nbsp;A&nbsp;T&nbsp;I&nbsp;O&nbsp;N&nbsp;S
-          </h2>
-        </div>
-        <div>
-          <h3 className="text-2xl text-slate-800 dark:text-slate-300 text-center my-6">
-            L E V E L &nbsp; 3
-          </h3>
-        </div>
-        <div className="hidden lg:grid lg:grid-cols-2 gap-8 divide-x-2 text-slate-500">
-          <div>
-            <ul className="text-lg text-slate-800 dark:text-slate-300 mb-6 lg:text-right text-center mx-8">
-              <li>
-                <p className="font-bold my-2">A Level Maths</p>
-              </li>
-              <li>
-                <p className="font-bold my-2">A Level Physics</p>
-              </li>
-              <li>
-                <p className="font-bold my-2">AS Level Computer Science </p>
-              </li>
-              <li>
-                <p className="font-bold my-2">EAL Engineering</p>
-              </li>
-            </ul>
-          </div>
-          <div className="text-lg text-slate-700 dark:text-slate-300 mb-1 lg:text-left text-center">
-            <ul>
-              <li>
-                <p className="my-2">Grade A* (Predicted)</p>
-              </li>
-              <li>
-                <p className="my-2">Grade A* (Predicted)</p>
-              </li>
-              <li>
-                <p className="my-2">Grade A (Predicted)</p>
-              </li>
-              <li>
-                <p className="my-2">Distinction * (Predicted)</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div>
-          <div className="lg:hidden grid grid-cols-1 gap-2 text-lg text-center text-slate-800 dark:text-slate-300 mb-6">
-            <div ><p className="font-bold">A Level Maths</p> <p>Grade A* (Predicted)</p></div>
-            <hr className="w-64 mx-auto border-y-1 rounded-full border-slate-500"/>
-            <div> <p className="font-bold">A Level Physics</p> <p>Grade A* (Predicted)</p></div>
-            <hr className="w-64 mx-auto border-y-1 rounded-full border-slate-500"/>
-            <div> <p className="font-bold">AS Level Computer Science</p> <p>Grade A (Predicted)</p></div>
-            <hr className="w-64 mx-auto border-y-1 rounded-full border-slate-500"/>
-            <div> <p className="font-bold">EAL Engineering</p> <p>Distinction * (Predicted)</p></div>
 
+        {/* Content Sections */}
+        {activeSection === 'overview' && (
+          <div className="space-y-8">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+              <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-200 mb-6 text-center">Personal Summary</h2>
+              <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed text-center max-w-4xl mx-auto">
+                {profileData.personal.summary}
+              </p>
+            </div>
+            
+            {/* Hobbies Grid */}
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6 text-center">Hobbies & Activities</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {profileData.hobbies.map((hobby, index) => (
+                  <div
+                    key={hobby.name}
+                    className="bg-slate-50 dark:bg-slate-700 rounded-xl p-6 border border-slate-200 dark:border-slate-600 hover:shadow-md transition-all duration-300 cursor-pointer"
+                    onClick={() => setExpandedHobby(expandedHobby === index ? null : index)}
+                  >
+                    <div className="text-center">
+                      <div className="text-4xl mb-3">{hobby.emoji}</div>
+                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{hobby.name}</h4>
+                      {expandedHobby === index && (
+                        <p className="text-sm text-slate-600 dark:text-slate-400">{hobby.description}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <h3 className="text-2xl text-slate-800 dark:text-slate-300 text-center my-6">
-            L E V E L &nbsp; 2
-          </h3>
-        </div>
-        <div className="hidden lg:grid lg:grid-cols-2 gap-8 divide-x-2 text-slate-500">
-          <div>
-            <ul className="text-lg text-slate-800 dark:text-slate-300 mb-6 lg:text-right text-center mx-8">
-              <li>
-                <p className="font-bold my-2">GCSE Maths</p>
-              </li>
-              <li>
-                <p className="font-bold my-2">GCSE Physics</p>
-              </li>
-              <li>
-                <p className="font-bold my-2">GCSE Chemistry</p>
-              </li>
-              <li>
-                <p className="font-bold my-2">GCSE Computer Science</p>
-              </li>
-              <li>
-                <p className="font-bold my-2">GCSE English Literature</p>
-              </li>
-              <li>
-                <p className="font-bold my-2">GCSE Product Design</p>
-              </li>
-              <li>
-                <p className="font-bold my-2">GCSE English Language</p>
-              </li>
-              <li>
-                <p className="font-bold my-2">
-                  BTEC Digital Information Technology
-                </p>
-              </li>
-              <li>
-                <p className="font-bold my-2">
-                  Cambridge Nationals Engineering
-                </p>
-              </li>
-              <li>
-                <p className="font-bold my-2">EAL Engineering</p>
-              </li>
-            </ul>
+        )}
+
+        {activeSection === 'skills' && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6 flex items-center gap-3">
+                <Cpu className="text-blue-600" />
+                Technical Skills
+              </h3>
+              <div className="space-y-4">
+                {profileData.skills.technical.map((skill, index) => (
+                  <div key={skill} className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors duration-300">
+                    <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                    <span className="text-slate-700 dark:text-slate-300 font-medium">
+                      {skill}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6 flex items-center gap-3">
+                <User className="text-purple-600" />
+                Personal Skills
+              </h3>
+              <div className="space-y-4">
+                {profileData.skills.personal.map((skill, index) => (
+                  <div key={skill} className="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-600 transition-colors duration-300">
+                    <div className="w-3 h-3 bg-purple-600 rounded-full"></div>
+                    <span className="text-slate-700 dark:text-slate-300 font-medium">
+                      {skill}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="text-lg text-slate-700 dark:text-slate-300 mb-1 lg:text-left text-center">
-            <ul>
-              <li>
-                <p className="my-2">Grade 8</p>
-              </li>
-              <li>
-                <p className="my-2">Grade 8</p>
-              </li>
-              <li>
-                <p className="my-2">Grade 8</p>
-              </li>
-              <li>
-                <p className="my-2">Grade 8</p>
-              </li>
-              <li>
-                <p className="my-2">Grade 7</p>
-              </li>
-              <li>
-                <p className="my-2">Grade 7</p>
-              </li>
-              <li>
-                <p className="my-2">Grade 6</p>
-              </li>
-              <li>
-                <p className="my-2">Merit</p>
-              </li>
-              <li>
-                <p className="my-2">Distinction *</p>
-              </li>
-              <li>
-                <p className="my-2">Distinction</p>
-              </li>
-            </ul>
+        )}
+
+        {activeSection === 'interests' && (
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-200 mb-8 text-center">Areas of Interest</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {profileData.interests.map((interest, index) => {
+                const Icon = interest.icon;
+                return (
+                  <div key={interest.name} className="group">
+                    <div className={`${interest.color} p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105`}>
+                      <div className="text-center text-white">
+                        <Icon size={40} className="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
+                        <h4 className="font-semibold text-lg">{interest.name}</h4>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-        <div className="lg:hidden grid grid-cols-2 gap-2 text-lg text-center text-slate-800 dark:text-slate-300 mb-6 ">
-<div ><p className="font-bold">GCSE Maths</p> <p>Grade 8</p></div>
-<div ><p className="font-bold">GCSE Physics</p> <p>Grade 8</p></div>
-<div ><p className="font-bold">GCSE Chemistry</p> <p>Grade 8</p></div>
-<div ><p className="font-bold">GCSE Computer Science</p> <p>Grade 8</p></div>
-<div ><p className="font-bold">GCSE English Literature</p> <p>Grade 7</p></div>
-<div ><p className="font-bold">GCSE Product Design</p> <p>Grade 7</p></div>
-<div ><p className="font-bold">GCSE English Language</p> <p>Grade 6</p></div>
-<div ><p className="font-bold">BTEC Digital Information Technology</p> <p>Merit</p></div>
-<div ><p className="font-bold">Cambridge Nationals Engineering</p> <p>Distinction</p></div>
-<div ><p className="font-bold">EAL Engineering</p> <p>Distinction *</p></div>
-        </div>
+        )}
+
+        {activeSection === 'qualifications' && (
+          <div className="space-y-8">
+            {/* Current Studies */}
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6 flex items-center gap-3">
+                <Calendar className="text-blue-600" />
+                Current Studies (A-Level)
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {profileData.qualifications.current.map((qual, index) => (
+                  <GradeCard key={qual.subject} qualification={qual} index={index} />
+                ))}
+              </div>
+            </div>
+
+            {/* Achieved Qualifications */}
+            <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200 dark:border-slate-700">
+              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6 flex items-center gap-3">
+                <Award className="text-emerald-600" />
+                Achieved Qualifications
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {profileData.qualifications.achieved.map((qual, index) => (
+                  <GradeCard key={qual.subject} qualification={qual} index={index} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
