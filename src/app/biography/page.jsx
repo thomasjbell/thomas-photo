@@ -39,11 +39,11 @@ export default function BiographyPage() {
           <div>
           {/* Desktop */}
             <h1 className="hidden lg:block text-4xl font-bold text-left text-slate-900 dark:text-slate-50 my-auto">
-              B I O G R A P H Y
+              B&nbsp;I&nbsp;O&nbsp;G&nbsp;R&nbsp;A&nbsp;P&nbsp;H&nbsp;Y
             </h1>
             {/* Mobile */}
             <h1 className="lg:hidden text-4xl font-bold text-center text-slate-900 dark:text-slate-50 my-4">
-              T H O M A S &nbsp; B E L L
+              T&nbsp;H&nbsp;O&nbsp;M&nbsp;A&nbsp;S &nbsp; B&nbsp;E&nbsp;L&nbsp;L
             </h1>
           </div>
 
@@ -93,7 +93,7 @@ export default function BiographyPage() {
 
         <div>
           <h2 className="text-3xl text-slate-900 font-bold dark:text-slate-50 text-center my-8 lg:my-12">
-            P E R S O N A L &nbsp; S U M M A R Y
+            P&nbsp;E&nbsp;R&nbsp;S&nbsp;O&nbsp;N&nbsp;A&nbsp;L &nbsp; S&nbsp;U&nbsp;M&nbsp;M&nbsp;A&nbsp;R&nbsp;Y
           </h2>
         </div>
 
@@ -107,8 +107,7 @@ export default function BiographyPage() {
         </p>
         <div>
           <h2 className="text-3xl text-slate-900 font-bold dark:text-slate-50 text-center my-8 lg:my-12 ">
-            S K I L L S, &nbsp; H O B B I E S &nbsp; A N D &nbsp; I N T E R E S
-            T S
+            S&nbsp;K&nbsp;I&nbsp;L&nbsp;L&nbsp;S, &nbsp; H&nbsp;O&nbsp;B&nbsp;B&nbsp;I&nbsp;E&nbsp;S &nbsp; A&nbsp;N&nbsp;D &nbsp; I&nbsp;N&nbsp;T&nbsp;E&nbsp;R&nbsp;E&nbsp;S&nbsp;T&nbsp;S
           </h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 text-lg text-slate-800 dark:text-slate-300 mb-6 text-center">
@@ -198,7 +197,7 @@ export default function BiographyPage() {
         </div>
         <div>
           <h2 className="text-3xl text-slate-900 font-bold dark:text-slate-300 text-center my-8 lg:my-12">
-            Q U A L I F I C A T I O N S
+            Q&nbsp;U&nbsp;A&nbsp;L&nbsp;I&nbsp;F&nbsp;I&nbsp;C&nbsp;A&nbsp;T&nbsp;I&nbsp;O&nbsp;N&nbsp;S
           </h2>
         </div>
         <div>
