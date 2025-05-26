@@ -1,5 +1,5 @@
 // app/about/page.jsx
-'use client';
+"use client";
 
 import Image from "next/image";
 import Button from "../../components/Button";
@@ -11,11 +11,10 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl font-bold text-primary-900 dark:text-primary-50 mb-6">
-              About Me
+              A B O U T &nbsp; M E
             </h1>
             <p className="text-lg text-primary-600 dark:text-primary-300 mb-6">
-              Hello! I'm Thomas, an amateur photographer and outdoor
-              enthusiast.
+              Hello! I'm Thomas, an amateur photographer and outdoor enthusiast.
             </p>
             <p className="text-lg text-primary-600 dark:text-primary-300 mb-6">
               I take photos of people, places, and things that inspire me.
@@ -23,12 +22,14 @@ export default function AboutPage() {
               explore other subjects as well.
             </p>
             <p className="text-lg text-primary-600 dark:text-primary-300 mb-6">
-              When I'm not behind the camera, you can find me walking,
-              climbing or creating things. I am a Materials Science Student
-              but I love all things science and tech.
+              When I'm not behind the camera, you can find me walking, climbing
+              or creating things. I am a Materials Science Student but I love
+              all things science and tech.
             </p>
             <div className="mt-8">
-              <Button variant="outline" href="/contact">Get in Touch</Button>
+              <Button variant="outline" href="mailto:thomas@thomasjbell.co.uk" target="_blank">
+                Get in Touch
+              </Button>
             </div>
           </div>
 

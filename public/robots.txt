@@ -1,0 +1,7 @@
+// Block CV page
+User-agent: *
+Disallow: /cv
+
+// Allow Rest
+Allow: /portfolio
+Allow: /about

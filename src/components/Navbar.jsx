@@ -1,10 +1,9 @@
 // components/Navbar.jsx
-'use client';
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import DarkModeToggle from "./DarkModeToggle";
-
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,7 +16,7 @@ export default function Navbar() {
               href="/"
               className="font-bold text-xl text-primary-800 dark:text-primary-50"
             >
-              Thomas J Bell
+              T H O M A S &nbsp; J &nbsp; B E L L
             </Link>
           </div>
 
@@ -27,21 +26,21 @@ export default function Navbar() {
               href="/"
               className="text-primary-600 hover:text-primary-900 dark:text-primary-50 dark:hover:text-primary-300"
             >
-              Home
+              H O M E
             </Link>
             <Link
               href="/portfolio"
               className="text-primary-600 hover:text-primary-900 dark:text-primary-50 dark:hover:text-primary-300"
             >
-              Portfolio
+              P O R T F O L I O
             </Link>
             <Link
               href="/about"
               className="text-primary-600 hover:text-primary-900 dark:text-primary-50 dark:hover:text-primary-300"
             >
-              About
+              A B O U T
             </Link>
-            
+
             {/* Dark mode toggle component */}
             <DarkModeToggle />
           </div>
@@ -50,7 +49,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center space-x-4">
             {/* Dark mode toggle for mobile */}
             <DarkModeToggle />
-            
+
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-primary-600 hover:text-primary-900 dark:text-primary-50 dark:hover:text-primary-300 focus:outline-none"
