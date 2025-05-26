@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <DarkModeProvider>
-        <body className="min-h-screen flex flex-col bg-primary-50 dark:bg-primary-900 text-primary-900 dark:text-primary-50">
+        <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50">
           <main className="flex-grow">{children}</main>
           <Footer />
         </body>

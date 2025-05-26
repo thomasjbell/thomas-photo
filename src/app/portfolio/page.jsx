@@ -1,5 +1,5 @@
 // app/portfolio/page.jsx
-'use client';
+"use client";
 
 import { useState, useEffect } from "react";
 import { portfolioItems } from "../../utils/constants";
@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function PortfolioPage() {
   const [randomizedItems, setRandomizedItems] = useState([]);
-  
+
   useEffect(() => {
     // Create a shuffled copy of the portfolio items
     const shuffleArray = (array) => {
@@ -18,18 +18,18 @@ export default function PortfolioPage() {
       }
       return newArray;
     };
-    
+
     setRandomizedItems(shuffleArray(portfolioItems));
   }, []);
 
   return (
-    <section className="py-12 bg-primary-50 dark:bg-primary-900" id="portfolio">
+    <section className="py-12 bg-slate-50 dark:bg-slate-900" id="portfolio">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-primary-900 dark:text-primary-50 mb-4">
+          <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-4">
             P O R T F O L I O
           </h1>
-          <p className="text-lg text-primary-600 dark:text-primary-300 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Explore a selection of my best work across different photography
             categories
           </p>

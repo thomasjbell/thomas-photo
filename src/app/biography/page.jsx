@@ -13,27 +13,37 @@ import { Cpu } from "lucide-react";
 
 export default function BiographyPage() {
   return (
-    <div className="min-h-screen py-14 bg-primary-50 dark:bg-primary-900">
+    <div className="min-h-screen py-14 bg-slate-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 items-center">
           <div>
-            <h1 className="text-4xl font-bold text-center text-primary-900 dark:text-primary-50 mb-6">
+            {/* Desktop */}
+            <h1 className="hidden lg:block text-4xl font-bold text-right text-slate-900 dark:text-slate-50 my-auto">
               T H O M A S &nbsp; B E L L
+            </h1>
+            {/* Mobile */}
+            <h1 className="lg:hidden text-4xl font-bold text-center text-slate-900 dark:text-slate-50 my-4">
+              B I O G R A P H Y
             </h1>
           </div>
           <div className="">
             <Image
               src="/images/thomas-bell.png"
               alt="Thomas Bell"
-              className="mx-auto mb-6 rounded-full drop-shadow-md border border-primary-900 dark:border-primary-50"
+              className="mx-auto mb-6 rounded-full drop-shadow-md dark:border-2 border-slate-800 dark:border-slate-50"
               width={200}
               height={200}
             />
           </div>
 
           <div>
-            <h1 className="text-4xl font-bold text-center text-primary-900 dark:text-primary-600 my-auto">
+          {/* Desktop */}
+            <h1 className="hidden lg:block text-4xl font-bold text-left text-slate-900 dark:text-slate-50 my-auto">
               B I O G R A P H Y
+            </h1>
+            {/* Mobile */}
+            <h1 className="lg:hidden text-4xl font-bold text-center text-slate-900 dark:text-slate-50 my-4">
+              T H O M A S &nbsp; B E L L
             </h1>
           </div>
 
@@ -51,7 +61,7 @@ export default function BiographyPage() {
             <a
               href="https://www.linkedin.com/in/thomasbell2/"
               target="_blank"
-              className="text-primary-600 dark:text-primary-500 hover:scale-103 transition duration-300 ease-in-out hovwer:drop-shadow-sm"
+              className="text-slate-900 dark:text-slate-100 hover:scale-103 transition duration-400 ease-in-out hover:drop-shadow-sm"
             >
               &nbsp; &nbsp; LinkedIn
             </a>
@@ -62,7 +72,7 @@ export default function BiographyPage() {
             <a
               href="mailto:thomas@thomasjbell.co.uk"
               target="_blank"
-              className="text-primary-600 dark:text-primary-500 hover:scale-103 transition duration-300 ease-in-out hover:drop-shadow-sm"
+              className="text-slate-900 dark:text-slate-100 hover:scale-103 transition duration-400 ease-in-out hover:drop-shadow-sm"
             >
               &nbsp; &nbsp; thomas@thomasjbell.co.uk
             </a>
@@ -73,20 +83,21 @@ export default function BiographyPage() {
             <a
               href="https://maps.app.goo.gl/9HhU5P1jAEBxHHRe6"
               target="_blank"
-              className="text-primary-600 dark:text-primary-500 hover:scale-103 transition duration-300 ease-in-out hover:drop-shadow-sm"
+              className="text-slate-900 dark:text-slate-100 hover:scale-103 transition duration-400 ease-in-out hover:drop-shadow-sm"
             >
               &nbsp; &nbsp; Milton Keynes, Bucks
             </a>
           </div>
         </div>
-        <hr className="my-12 border-y-1 rounded-full" />
+        <hr className="my-12 border-1 rounded-full border-slate-500" />
+
         <div>
-          <h2 className="text-3xl text-primary-600 font-bold dark:text-primary-300 text-center my-12">
+          <h2 className="text-3xl text-slate-900 font-bold dark:text-slate-50 text-center my-8 lg:my-12">
             P E R S O N A L &nbsp; S U M M A R Y
           </h2>
         </div>
 
-        <p className="text-lg text-primary-600 dark:text-primary-300 mb-6">
+        <p className="text-lg text-slate-800 dark:text-slate-300 mb-6 px-6 text-center justify-center">
           An enthusiastic, personable and inquisitive student with confident
           communication skills and a love of learning. I study Engineering,
           Maths and Physics and am very interested in materials science and
@@ -95,59 +106,62 @@ export default function BiographyPage() {
           more about physics and tech.
         </p>
         <div>
-          <h2 className="text-3xl text-primary-600 font-bold dark:text-primary-300 text-center my-12">
+          <h2 className="text-3xl text-slate-900 font-bold dark:text-slate-50 text-center my-8 lg:my-12 ">
             S K I L L S, &nbsp; H O B B I E S &nbsp; A N D &nbsp; I N T E R E S
             T S
           </h2>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 text-lg text-slate-800 dark:text-slate-300 mb-6 text-center">
           <div>
-            <ul className="text-lg text-primary-600 dark:text-primary-300 mb-6 text-center  my-2">
+            <h3 className="lg:hidden text-2xl text-slate-900 dark:text-slate-50">S K I L L S</h3>
+            <ul className=" mb-6 text-center  my-2">
               <li>
-                <p>‣ &nbsp; &nbsp;Problem Solving</p>
+                <p> <span className="text-slate-500">‣</span> &nbsp; &nbsp;Problem Solving</p>
               </li>
               <li>
-                <p>‣ &nbsp; &nbsp;Numerate</p>
+                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;Numerate</p>
               </li>
               <li>
-                <p>‣ &nbsp; &nbsp;Articulate</p>
+                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;Articulate</p>
               </li>
               <li>
-                <p>‣ &nbsp; &nbsp;Team/Independent Work</p>
+                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;Team/Independent Work</p>
               </li>
               <li>
-                <p>‣ &nbsp; &nbsp;CAD, 3D Printing, Python and React</p>
+                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;CAD, 3D Printing, Python and React</p>
               </li>
               <li>
-                <p>‣ &nbsp; &nbsp;Initiative</p>
+                <p><span className="text-slate-500">‣</span> &nbsp; &nbsp;Initiative</p>
               </li>
             </ul>
           </div>
           <div>
-            <ul className="text-lg text-primary-600 dark:text-primary-300 mb-6 text-center">
+            <h3 className="lg:hidden text-2xl text-slate-900 dark:text-slate-50">H O B B I E S</h3>
+            <ul className="mb-6 text-center my-2">
               <li>
                 <p>Climbing</p>
               </li>
-              <hr className="my-2 mx-auto w-48 border-y-1 rounded-full" />
+              <hr className="my-2 mx-auto w-48 border-y-1 rounded-full border-slate-500" />
               <li>
                 <p>Walking</p>
               </li>
-              <hr className="my-2 mx-auto w-64 border-y-1 rounded-full" />
+              <hr className="my-2 mx-auto w-64 border-y-1 rounded-full border-slate-500" />
               <li>
                 <p>Photography</p>
               </li>
-              <hr className="my-2 mx-auto w-64 border-y-1 rounded-full" />
+              <hr className="my-2 mx-auto w-64 border-y-1 rounded-full border-slate-500" />
               <li>
                 <p>Gaming</p>
               </li>
-              <hr className="my-2 mx-auto w-48 border-y-1 rounded-full" />
+              <hr className="my-2 mx-auto w-48 border-y-1 rounded-full border-slate-500" />
               <li>
                 <p>Piano</p>
               </li>
             </ul>
           </div>
           <div>
-            <ul className="text-lg text-primary-600 dark:text-primary-300 mb-6 text-center">
+            <h3 className="lg:hidden text-2xl text-slate-900 dark:text-slate-50">I N T E R E S T S</h3>
+            <ul className="mb-6 text-center my-2">
               <li>
                 <p className="flex justify-center my-2">
                   <Diff color="#64748b" /> &nbsp; &nbsp; Maths
@@ -183,18 +197,18 @@ export default function BiographyPage() {
           </div>
         </div>
         <div>
-          <h2 className="text-3xl text-primary-600 font-bold dark:text-primary-300 text-center mt-12">
+          <h2 className="text-3xl text-slate-900 font-bold dark:text-slate-300 text-center my-8 lg:my-12">
             Q U A L I F I C A T I O N S
           </h2>
         </div>
         <div>
-          <h3 className="text-2xl text-primary-600 dark:text-primary-300 text-center my-6">
+          <h3 className="text-2xl text-slate-800 dark:text-slate-300 text-center my-6">
             L E V E L &nbsp; 3
           </h3>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 divide-x-2">
+        <div className="hidden lg:grid lg:grid-cols-2 gap-8 divide-x-2 text-slate-500">
           <div>
-            <ul className="text-lg text-primary-600 dark:text-primary-300 mb-6 lg:text-right text-center mx-8">
+            <ul className="text-lg text-slate-800 dark:text-slate-300 mb-6 lg:text-right text-center mx-8">
               <li>
                 <p className="font-bold my-2">A Level Maths</p>
               </li>
@@ -209,7 +223,7 @@ export default function BiographyPage() {
               </li>
             </ul>
           </div>
-          <div className="text-lg text-primary-600 dark:text-primary-300 mb-1 lg:text-left text-center">
+          <div className="text-lg text-slate-700 dark:text-slate-300 mb-1 lg:text-left text-center">
             <ul>
               <li>
                 <p className="my-2">Grade A* (Predicted)</p>
@@ -227,13 +241,23 @@ export default function BiographyPage() {
           </div>
         </div>
         <div>
-          <h3 className="text-2xl text-primary-600 dark:text-primary-300 text-center my-6">
+          <div className="lg:hidden grid grid-cols-1 gap-2 text-lg text-center text-slate-800 dark:text-slate-300 mb-6">
+            <div ><p className="font-bold">A Level Maths</p> <p>Grade A* (Predicted)</p></div>
+            <hr className="w-64 mx-auto border-y-1 rounded-full border-slate-500"/>
+            <div> <p className="font-bold">A Level Physics</p> <p>Grade A* (Predicted)</p></div>
+            <hr className="w-64 mx-auto border-y-1 rounded-full border-slate-500"/>
+            <div> <p className="font-bold">AS Level Computer Science</p> <p>Grade A (Predicted)</p></div>
+            <hr className="w-64 mx-auto border-y-1 rounded-full border-slate-500"/>
+            <div> <p className="font-bold">EAL Engineering</p> <p>Distinction * (Predicted)</p></div>
+
+          </div>
+          <h3 className="text-2xl text-slate-800 dark:text-slate-300 text-center my-6">
             L E V E L &nbsp; 2
           </h3>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 divide-x-2">
+        <div className="hidden lg:grid lg:grid-cols-2 gap-8 divide-x-2 text-slate-500">
           <div>
-            <ul className="text-lg text-primary-600 dark:text-primary-300 mb-6 lg:text-right text-center mx-8">
+            <ul className="text-lg text-slate-800 dark:text-slate-300 mb-6 lg:text-right text-center mx-8">
               <li>
                 <p className="font-bold my-2">GCSE Maths</p>
               </li>
@@ -270,7 +294,7 @@ export default function BiographyPage() {
               </li>
             </ul>
           </div>
-          <div className="text-lg text-primary-600 dark:text-primary-300 mb-1 lg:text-left text-center">
+          <div className="text-lg text-slate-700 dark:text-slate-300 mb-1 lg:text-left text-center">
             <ul>
               <li>
                 <p className="my-2">Grade 8</p>
@@ -304,6 +328,18 @@ export default function BiographyPage() {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="lg:hidden grid grid-cols-2 gap-2 text-lg text-center text-slate-800 dark:text-slate-300 mb-6 ">
+<div ><p className="font-bold">GCSE Maths</p> <p>Grade 8</p></div>
+<div ><p className="font-bold">GCSE Physics</p> <p>Grade 8</p></div>
+<div ><p className="font-bold">GCSE Chemistry</p> <p>Grade 8</p></div>
+<div ><p className="font-bold">GCSE Computer Science</p> <p>Grade 8</p></div>
+<div ><p className="font-bold">GCSE English Literature</p> <p>Grade 7</p></div>
+<div ><p className="font-bold">GCSE Product Design</p> <p>Grade 7</p></div>
+<div ><p className="font-bold">GCSE English Language</p> <p>Grade 6</p></div>
+<div ><p className="font-bold">BTEC Digital Information Technology</p> <p>Merit</p></div>
+<div ><p className="font-bold">Cambridge Nationals Engineering</p> <p>Distinction</p></div>
+<div ><p className="font-bold">EAL Engineering</p> <p>Distinction *</p></div>
         </div>
       </div>
     </div>

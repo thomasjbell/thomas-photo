@@ -4,11 +4,8 @@
 :root {
   --background: #f8fafc; /* slate-50 for light mode */
   --foreground: #0f172a; /* slate-900 for light mode */
-}
-
-html.dark {
-  --background: #0f172a; /* slate-900 for dark mode */
-  --foreground: #f8fafc; /* slate-50 for dark mode */
+    --backgroundDark: #0f172a; /* slate-900 for dark mode */
+  --foregroundDark: #f8fafc; /* slate-50 for dark mode */
 }
 
 @theme inline {
@@ -21,6 +18,14 @@ html.dark {
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+body {
+  --background: var(--backgroundDark);
+  --foreground: var(--foregroundDark);
+ 
+}
 }
 
 /* Add this to globals.css */
