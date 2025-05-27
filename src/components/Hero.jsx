@@ -83,7 +83,7 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button href="/photography" variant="outline" size="medium">
+            <Button href="/photography" prefetch={true} variant="outline" size="medium">
               View Photography
             </Button>
             <Button href="/about" variant="outline" size="medium">

@@ -44,6 +44,7 @@ export default function Navbar() {
             </Link>
             <Link
               href={navPages.photography.href}
+              prefetch={true}
               className={navPages.class.classname}
             >
               {navPages.photography.label}
