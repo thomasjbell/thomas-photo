@@ -1,15 +1,15 @@
-// app/portfolio/page.jsx
+// app/photography/page.jsx
 "use client";
 
 import { useState, useEffect } from "react";
-import { portfolioItems } from "../../utils/constants";
+import { photographyItems } from "../../utils/constants";
 import Image from "next/image";
 
-export default function PortfolioPage() {
+export default function photographyPage() {
   const [randomizedItems, setRandomizedItems] = useState([]);
 
   useEffect(() => {
-    // Create a shuffled copy of the portfolio items
+    // Create a shuffled copy of the photography items
     const shuffleArray = (array) => {
       const newArray = [...array];
       for (let i = newArray.length - 1; i > 0; i--) {
@@ -19,15 +19,15 @@ export default function PortfolioPage() {
       return newArray;
     };
 
-    setRandomizedItems(shuffleArray(portfolioItems));
+    setRandomizedItems(shuffleArray(photographyItems));
   }, []);
 
   return (
-    <section className="py-12 bg-slate-50 dark:bg-slate-900" id="portfolio">
+    <section className="py-8 bg-slate-50 dark:bg-slate-900" id="photography">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12 bg-white dark:bg-slate-800 border dark:border-slate-700 border-slate-200 rounded-2xl p-6 md:p-8">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-4">
-            P O R T F O L I O
+            Photography
           </h1>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Explore a selection of my best work across different photography
@@ -35,12 +35,12 @@ export default function PortfolioPage() {
           </p>
         </div>
 
-        {/* Mosaic Portfolio Grid */}
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3">
+        {/* Mosaic photography Grid */}
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3 border border-slate-200 dark:border-slate-700 p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-800">
           {randomizedItems.map((item) => (
             <div
               key={item.id}
-              className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-300"
+              className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-250 ease-in-out rounded-md"
             >
               <div className="relative w-full">
                 <Image
@@ -48,7 +48,7 @@ export default function PortfolioPage() {
                   alt={item.title}
                   width={500}
                   height={500}
-                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-auto object-cover transition-transform duration-250 ease-in-out group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                 />
                 {/* Overlay with title */}

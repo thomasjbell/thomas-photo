@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata = {
   title: "Thomas J Bell | Photography",
-  description: "Photography portfolio by Thomas J Bell",
+  description: "Photography photography by Thomas J Bell",
 };
 
 export default function RootLayout({ children }) {

@@ -7,6 +7,7 @@ import { Sun, Moon } from "lucide-react";
 import { useState, useEffect } from "react";
 import Button from "./Button";
 import { useDarkMode } from "./DarkModeProvider";
+import { motion } from "motion/react";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
@@ -20,13 +21,13 @@ export default function Hero() {
       const checkMobile = () => {
         setIsMobile(window.innerWidth < 768);
       };
-      
+
       // Initial check
       checkMobile();
-      
+
       // Add event listener for resize
       window.addEventListener("resize", checkMobile);
-      
+
       // Cleanup
       return () => {
         window.removeEventListener("resize", checkMobile);
@@ -37,7 +38,11 @@ export default function Hero() {
   return (
     <div className="relative h-screen">
       {/* Background image - desktop */}
-      <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${isMobile ? 'opacity-0' : 'opacity-100'}`}>
+      <div
+        className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+          isMobile ? "opacity-0" : "opacity-100"
+        }`}
+      >
         <Image
           src="/images/background.png"
           alt="Background image"
@@ -47,11 +52,15 @@ export default function Hero() {
           priority
         />
       </div>
-      
+
       {/* Background image - mobile */}
-      <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${isMobile ? 'opacity-100' : 'opacity-0'}`}>
+      <div
+        className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+          isMobile ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <Image
-          src="/portfolio/lone-tree.png"
+          src="/photography/lone-tree.png"
           alt="Mobile background image"
           className="relative inset-0 object-cover w-full h-full brightness-80"
           width={2560}
@@ -59,8 +68,6 @@ export default function Hero() {
           priority
         />
       </div>
-
-
 
       {/* Hero content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center content-center h-full">
@@ -71,12 +78,13 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="text-lg sm:text-xl md:text-2xl mb-8">
-            P H O T O G R A P H Y
+          <p className="text-lg sm:text-xl md:text-2xl my-6 ">
+            P&nbsp;H&nbsp;O&nbsp;T&nbsp;O&nbsp;&&nbsp;B&nbsp;I&nbsp;O&nbsp;
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button href="/portfolio" variant="outline" size="medium">
-              View Portfolio
+            <Button href="/photography" variant="outline" size="medium">
+              View Photography
             </Button>
             <Button href="/about" variant="outline" size="medium">
               About Me

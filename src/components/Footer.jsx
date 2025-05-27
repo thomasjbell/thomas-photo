@@ -8,11 +8,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">
-              Thomas J Bell Photography
+              Thomas J Bell
             </h3>
             <p className="text-slate-500 dark:text-slate-600">
               Amateur Photography by
-              <br />Thomas J Bell
+              <br />
+              Thomas J Bell
             </p>
           </div>
           <div>
@@ -22,10 +23,9 @@ export default function Footer() {
                 href="https://maps.app.goo.gl/9HhU5P1jAEBxHHRe6"
                 className="hover:text-slate-100 dark:hover:text-slate-300"
                 target="_blank"
-                
               >
-                <p>Milton Keynes</p>
-                <p>England</p>
+                <p>Milton Keynes,</p>
+                <p>Buckinghamshire</p>
               </a>
 
               <p className="mt-2">
@@ -51,10 +51,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/portfolio"
+                  href="/photography"
                   className="text-slate-500 hover:text-slate-100 dark:text-slate-600 dark:hover:text-slate-300"
                 >
-                  Portfolio
+                  Photography
                 </Link>
               </li>
 
@@ -66,14 +66,13 @@ export default function Footer() {
                   About
                 </Link>
               </li>
-             
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Thomas J Bell Photography. All
+            &copy; {new Date().getFullYear()} Thomas J Bell. All
             rights reserved.
           </p>
 

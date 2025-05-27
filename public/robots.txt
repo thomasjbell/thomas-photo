@@ -3,5 +3,5 @@ User-agent: *
 Disallow: /cv
 
 // Allow Rest
-Allow: /portfolio
+Allow: /photography
 Allow: /about
