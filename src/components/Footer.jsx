@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Bird } from "lucide-react";
 
+const linksClass = "text-slate-500 hover:text-slate-300 dark:text-slate-600 dark:hover:text-slate-400 transition-colors duration-250 ease-in-out";
+
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-400 dark:bg-slate-950 dark:text-slate-500 py-12">
@@ -16,20 +18,20 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
-            <address className="not-italic text-slate-500 dark:text-slate-600">
+            <address className="not-italic">
               <a
                 href="https://maps.app.goo.gl/9HhU5P1jAEBxHHRe6"
-                className="hover:text-slate-100 dark:hover:text-slate-300"
+                className={linksClass}
                 target="_blank"
               >
-                <p>Milton Keynes,</p>
-                <p>Buckinghamshire</p>
+                Milton Keynes, <br />
+                Buckinghamshire
               </a>
 
               <p className="mt-2">
                 <a
                   href="mailto:thomas@thomasjbell.co.uk"
-                  className="hover:text-slate-100 dark:hover:text-slate-300"
+                  className={linksClass}
                 >
                   thomas@thomasjbell.co.uk
                 </a>
@@ -42,7 +44,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="text-slate-500 hover:text-slate-100 dark:text-slate-600 dark:hover:text-slate-300"
+                  className={linksClass}
                 >
                   Home
                 </Link>
@@ -51,7 +53,7 @@ export default function Footer() {
                 <Link
                   href="/photography"
                   prefetch={true}
-                  className="text-slate-500 hover:text-slate-100 dark:text-slate-600 dark:hover:text-slate-300"
+                  className={linksClass}
                 >
                   Photography
                 </Link>
@@ -60,7 +62,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-slate-500 hover:text-slate-100 dark:text-slate-600 dark:hover:text-slate-300"
+                  className={linksClass}
                 >
                   About
                 </Link>
@@ -79,15 +81,15 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://equalab.uk/"
-              className="text-slate-300 hover:text-slate-50"
+              className="text-slate-500 hover:text-slate-400 transition-colors duration-250"
             >
               <span className="sr-only">EquaLab</span>
-              <Bird width={24} height={24} fill="cuurentColor" />
+              <Bird width={24} height={24} fill="currentColor" />
             </a>
             <a
               target="_blank"
               href="https://www.instagram.com/thomas.j.bell/"
-              className="text-slate-300 hover:text-slate-50"
+              className="text-slate-500 hover:text-slate-400 transition-colors duration-250"
             >
               <span className="sr-only">Instagram</span>
               <svg
@@ -105,7 +107,7 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://www.linkedin.com/in/thomasbell2/"
-              className="text-slate-300 hover:text-slate-50"
+              className="text-slate-500 hover:text-slate-400 transition-colors duration-250"
             >
               <span className="sr-only">LinkedIn</span>
               <svg
