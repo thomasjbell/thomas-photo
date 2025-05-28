@@ -25,7 +25,7 @@ export default function photographyPage() {
   return (
     <section className="py-8 bg-slate-50 dark:bg-slate-900" id="photography">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="text-center mb-8 md:mb-12 bg-white dark:bg-slate-800 border dark:border-slate-700 border-slate-200 rounded-2xl p-6 md:p-8">
+        <div className="text-center mb-8 md:mb-12 bg-white dark:bg-slate-800 border dark:border-slate-700 border-slate-200 rounded-2xl p-6 md:p-8 drop-shadow-lg">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-4">
             Photography
           </h1>
@@ -36,7 +36,7 @@ export default function photographyPage() {
         </div>
 
         {/* Mosaic photography Grid */}
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3 border border-slate-200 dark:border-slate-700 p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-800">
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3 border border-slate-200 dark:border-slate-700 p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-800 drop-shadow-lg">
           {randomizedItems.map((item) => (
             <div
               key={item.id}

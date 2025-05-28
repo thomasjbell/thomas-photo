@@ -96,13 +96,13 @@ export const photographyItems = [
   },
   {
     id: 20,
-    title: "Malhalm Crag",
-    imagePath: "/photography/malhalm-crag.png",
+    title: "Malham Crag",
+    imagePath: "/photography/malham-crag.png",
   },
   {
     id: 21,
-    title: "Malhalm Tarn",
-    imagePath: "/photography/malhalm-tarn.png",
+    title: "Malham Tarn",
+    imagePath: "/photography/malham-tarn.png",
   },
   {
     id: 22,
