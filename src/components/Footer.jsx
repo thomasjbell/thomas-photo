@@ -75,14 +75,14 @@ export default function Footer() {
             reserved.
           </p>
 
-          <div className="flex space-x-4 mt-4 md:mt-0">
+          <div className="flex space-x-6 mt-4 md:mt-0">
             <a
               target="_blank"
               href="https://equalab.uk/"
               className="text-slate-300 hover:text-slate-50"
             >
               <span className="sr-only">EquaLab</span>
-              <Bird width={16} height={16} fill="cuurentColor" />
+              <Bird width={24} height={24} fill="cuurentColor" />
             </a>
             <a
               target="_blank"
@@ -92,8 +92,8 @@ export default function Footer() {
               <span className="sr-only">Instagram</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="24"
+                height="24"
                 fill="currentColor"
                 className="bi bi-instagram"
                 viewBox="0 0 16 16"
@@ -110,8 +110,8 @@ export default function Footer() {
               <span className="sr-only">LinkedIn</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="24"
+                height="24"
                 fill="currentColor"
                 className="bi bi-linkedin"
                 viewBox="0 0 16 16"

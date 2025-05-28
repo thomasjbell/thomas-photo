@@ -71,19 +71,24 @@ export default function Hero() {
 
       {/* Hero content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center content-center h-full">
-        <div className="text-white max-w-2xl">
+        <div className="text-white max-w-2xl ">
           <div className={caveat.className}>
             <h1 className="items-centre text-5xl sm:text-6xl md:text-7xl font-bold my-4">
               THOMAS J BELL
             </h1>
           </div>
 
-          <p className="text-md sm:text-lg md:text-xl my-6 inline-flex gap-4 bg-slate-200/20 backdrop-blur-md rounded-2xl py-2 px-4 border border-slate-100/40">
-            Photo & Bio
+          <p className="text-lg sm:text-xl md:text-2xl my-6  px-2">
+            P&nbsp;H&nbsp;O&nbsp;T&nbsp;O&nbsp;&&nbsp;B&nbsp;I&nbsp;O
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button href="/photography" prefetch={true} variant="outline" size="medium">
+            <Button
+              href="/photography"
+              prefetch={true}
+              variant="outline"
+              size="medium"
+            >
               View Photography
             </Button>
             <Button href="/about" variant="outline" size="medium">

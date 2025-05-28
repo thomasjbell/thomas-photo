@@ -1,7 +1,3 @@
-// Block CV page
-User-agent: *
-Disallow: /cv
-
 // Allow Rest
 Allow: /photography
 Allow: /about

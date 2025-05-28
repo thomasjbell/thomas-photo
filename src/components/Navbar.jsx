@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "motion/react";
 const navPages = {
   class: {
     classname:
-      "bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 hover:bg-slate-300 transition-colors duration-250 text-slate-700 dark:text-slate-300 px-4 py-1 rounded-full border border-slate-100 dark:border-slate-600",
+      "bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 hover:bg-slate-300 transition-colors duration-250 text-slate-700 dark:text-slate-300 px-4 py-1 rounded-full border border-slate-100 hover:border-slate-200 dark:border-slate-700 dark:hover:border-slate-600",
   },
   home: { href: "/", label: "Home" },
   photography: { href: "/photography", label: "Photography" },
