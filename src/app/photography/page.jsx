@@ -24,32 +24,76 @@ export default function PhotographyPage() {
     const shuffled = shuffleArray(photographyItems);
     setRandomizedItems(shuffled);
     
-    // Preload images
-    const preloadImages = async () => {
-      const imagePromises = shuffled.map((item) => {
-        return new Promise((resolve, reject) => {
-          const img = new window.Image();
-          img.onload = () => {
-            setLoadedImages(prev => prev + 1);
-            resolve();
-          };
-          img.onerror = reject;
-          img.src = item.imagePath;
-        });
-      });
+    // Check if mobile device
+    const isMobile = () => {
+      return window.innerWidth <= 768 || 
+             /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    };
 
-      try {
-        await Promise.all(imagePromises);
-        // Add a small delay to ensure smooth transition
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 300);
-      } catch (error) {
-        console.error("Error loading images:", error);
-        // Show content even if some images fail to load
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 3000);
+    // Preload images with mobile optimization
+    const preloadImages = async () => {
+      const mobile = isMobile();
+      
+      if (mobile) {
+        // On mobile: Load only first few images, then show content
+        const priorityImages = shuffled.slice(0, 4); // Load first 4 images only
+        
+        const imagePromises = priorityImages.map((item) => {
+          return new Promise((resolve) => {
+            const img = new window.Image();
+            img.onload = () => {
+              setLoadedImages(prev => prev + 1);
+              resolve();
+            };
+            img.onerror = () => resolve(); // Don't fail on error, just continue
+            img.src = item.imagePath;
+          });
+        });
+
+        try {
+          await Promise.all(imagePromises);
+          // Show content quickly on mobile
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 100);
+        } catch (error) {
+          console.error("Error loading priority images:", error);
+          // Show content after short delay even if images fail
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 1000);
+        }
+      } else {
+        // Desktop: Load all images or use timeout
+        const imagePromises = shuffled.map((item) => {
+          return new Promise((resolve) => {
+            const img = new window.Image();
+            img.onload = () => {
+              setLoadedImages(prev => prev + 1);
+              resolve();
+            };
+            img.onerror = () => resolve();
+            img.src = item.imagePath;
+          });
+        });
+
+        // Race between loading all images and a timeout
+        const loadingPromise = Promise.all(imagePromises);
+        const timeoutPromise = new Promise(resolve => 
+          setTimeout(resolve, 3000) // 3 second max wait
+        );
+
+        try {
+          await Promise.race([loadingPromise, timeoutPromise]);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 300);
+        } catch (error) {
+          console.error("Error loading images:", error);
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 1000);
+        }
       }
     };
 
@@ -76,7 +120,7 @@ export default function PhotographyPage() {
 
           {/* Mosaic photography Grid */}
           <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3 border border-slate-200 dark:border-slate-700 p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-800 drop-shadow-lg">
-            {randomizedItems.map((item) => (
+            {randomizedItems.map((item, index) => (
               <div
                 key={item.id}
                 className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-250 ease-in-out rounded-md"
@@ -89,7 +133,8 @@ export default function PhotographyPage() {
                     height={500}
                     className="w-full h-auto object-cover transition-transform duration-250 ease-in-out group-hover:scale-105 rounded-md"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
-                    priority={false}
+                    priority={index < 4} // Prioritize first 4 images
+                    loading={index < 4 ? "eager" : "lazy"} // Lazy load images after first 4
                   />
                   {/* Overlay with title */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center touch-manipulation">
