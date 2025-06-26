@@ -1,17 +1,17 @@
-// app/photography/page.jsx
+// src/app/photography/page.jsx
 "use client";
 import { useState, useEffect } from "react";
 import { photographyItems } from "../../utils/constants";
 import Image from "next/image";
 import LoadingScreen from "../../components/LoadingScreen";
+import { PhotographyPortfolioSchema } from "../../components/StructuredData";
 
 export default function PhotographyPage() {
   const [randomizedItems, setRandomizedItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [loadedImages, setLoadedImages] = useState(0);
 
   useEffect(() => {
-    // Create a shuffled copy of the photography items
+    // Your existing logic here...
     const shuffleArray = (array) => {
       const newArray = [...array];
       for (let i = newArray.length - 1; i > 0; i--) {
@@ -24,121 +24,74 @@ export default function PhotographyPage() {
     const shuffled = shuffleArray(photographyItems);
     setRandomizedItems(shuffled);
     
-    // Check if mobile device
-    const isMobile = () => {
-      return window.innerWidth <= 768 || 
-             /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    };
-
-    // Preload images with mobile optimization
-    const preloadImages = async () => {
-      const mobile = isMobile();
+    const preloadCriticalImages = async () => {
+      const criticalImages = shuffled.slice(0, 2);
       
-      if (mobile) {
-        // On mobile: Load only first few images, then show content
-        const priorityImages = shuffled.slice(0, 4); // Load first 4 images only
-        
-        const imagePromises = priorityImages.map((item) => {
-          return new Promise((resolve) => {
-            const img = new window.Image();
-            img.onload = () => {
-              setLoadedImages(prev => prev + 1);
-              resolve();
-            };
-            img.onerror = () => resolve(); // Don't fail on error, just continue
-            img.src = item.imagePath;
-          });
+      const imagePromises = criticalImages.map((item) => {
+        return new Promise((resolve) => {
+          const img = new window.Image();
+          img.onload = () => resolve();
+          img.onerror = () => resolve();
+          img.src = item.imagePath;
         });
+      });
 
-        try {
-          await Promise.all(imagePromises);
-          // Show content quickly on mobile
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 100);
-        } catch (error) {
-          console.error("Error loading priority images:", error);
-          // Show content after short delay even if images fail
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 1000);
-        }
-      } else {
-        // Desktop: Load all images or use timeout
-        const imagePromises = shuffled.map((item) => {
-          return new Promise((resolve) => {
-            const img = new window.Image();
-            img.onload = () => {
-              setLoadedImages(prev => prev + 1);
-              resolve();
-            };
-            img.onerror = () => resolve();
-            img.src = item.imagePath;
-          });
-        });
-
-        // Race between loading all images and a timeout
-        const loadingPromise = Promise.all(imagePromises);
-        const timeoutPromise = new Promise(resolve => 
-          setTimeout(resolve, 3000) // 3 second max wait
-        );
-
-        try {
-          await Promise.race([loadingPromise, timeoutPromise]);
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 300);
-        } catch (error) {
-          console.error("Error loading images:", error);
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 1000);
-        }
+      try {
+        await Promise.race([
+          Promise.all(imagePromises),
+          new Promise(resolve => setTimeout(resolve, 800))
+        ]);
+      } catch (error) {
+        console.error("Error loading critical images:", error);
       }
+      
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 100);
     };
 
     if (shuffled.length > 0) {
-      preloadImages();
+      preloadCriticalImages();
     }
   }, []);
 
   return (
     <>
+      <PhotographyPortfolioSchema photos={photographyItems} />
       <LoadingScreen isLoading={isLoading} />
       
       <section className="py-8 bg-slate-50 dark:bg-slate-900" id="photography">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-8 md:mb-12 bg-white dark:bg-slate-800 border dark:border-slate-700 border-slate-200 rounded-2xl p-6 md:p-8 drop-shadow-lg">
             <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-4">
-              Photography
+              Photography Portfolio
             </h1>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Explore a selection of my best work across different photography
-              categories
+              Explore a selection of my best work across different photography categories including landscapes, wildlife, and automotive photography.
             </p>
           </div>
 
-          {/* Mosaic photography Grid */}
           <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3 border border-slate-200 dark:border-slate-700 p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-800 drop-shadow-lg">
             {randomizedItems.map((item, index) => (
               <div
                 key={item.id}
-                className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-250 ease-in-out rounded-md"
+                className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-200 ease-out rounded-md"
               >
                 <div className="relative w-full">
                   <Image
                     src={item.imagePath}
-                    alt={item.title}
+                    alt={`${item.title} - Professional photography by Thomas J Bell`}
                     width={500}
                     height={500}
-                    className="w-full h-auto object-cover transition-transform duration-250 ease-in-out group-hover:scale-105 rounded-md"
+                    className="w-full h-auto object-cover transition-transform duration-200 ease-out group-hover:scale-105 rounded-md"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
-                    priority={index < 4} // Prioritize first 4 images
-                    loading={index < 4 ? "eager" : "lazy"} // Lazy load images after first 4
+                    priority={index < 2}
+                    loading={index < 2 ? "eager" : "lazy"}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R+Sh6MVLzNkCGlLbCZELTkuBhXOj/dLi0adqKDJh8qjFElQNLhUPnb2WTRy8llnhwTBmQgO5UjWrW4c8/8AKWHmR5/WvEALGJB/+RBvUH1YnHNJNFNNB3mIjnFG8NqTOuQgZPPWOhJ4WOtDFQq9IrR3lq5c/lZKq6zIcktq3rLmhOgLUjl9kqwSQfubnb7O4QjIe3G7qe4YnAYnJcJbsV4K7Q5PLj2qqtD1xjZgMoGjNaJ8Cp7q7V4oTznD8/XQHY8DNWGMY3p49V7Bs+wXmX3Pp2CpH/B5V3iXcFRLPdPnpqiQHj39e3lq4QNqFrxDOZe4pBCYVpkVKHlJjD4CqLjWTrAVEd8KdLfGE9HQ4Ot6OzB6u3I2nCGlS2Eg/TGJS2G1Nh2jdNhRIH+qJEKhGNzlKF+6LjALlh1iYEqF2Kb+QqlLa1w7qsAgFVrBL5UdBlMJjMrW9J4K2pKEkJPgI="
                   />
-                  {/* Overlay with title */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center touch-manipulation">
-                    <h3 className="text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center px-4">
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-200 flex items-center justify-center touch-manipulation">
+                    <h3 className="text-white text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-center px-4">
                       {item.title}
                     </h3>
                   </div>

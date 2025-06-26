@@ -1,35 +1,26 @@
-// app/photography/layout.jsx
+// src/app/photography/layout.jsx
 import Navbar from "@/components/Navbar";
+import { BreadcrumbSchema } from "@/components/StructuredData";
+import { generateMetadata as generateSEOMetadata } from "@/utils/seo";
 
-export const metadata = {
-  title: "Thomas J Bell | Photography photography",
-  description:
-    "Browse through a collection of stunning photographs including landscapes, wildlife, and automotive photography by Thomas J Bell.",
-  keywords:
-    "photography photography, Thomas Bell, landscape photos, wildlife photography, automotive photography",
-  openGraph: {
-    title: "Photography photography | Thomas J Bell",
-    description:
-      "Browse through a collection of stunning photographs including landscapes, wildlife, and automotive photography",
-    url: "https://thomasjbell.co.uk/photography",
-    siteName: "Thomas J Bell Photography",
-    images: [
-      {
-        url: "/photography/bluebell-wood.png",
-        width: 1200,
-        height: 630,
-        alt: "Thomas J Bell Photography photography",
-      },
-    ],
-    locale: "en_GB",
-    type: "website",
-  },
-};
+export const metadata = generateSEOMetadata({
+  title: "Photography Portfolio | Professional Photography Gallery",
+  description: "Browse through a stunning collection of professional photographs including landscapes, wildlife, and automotive photography by Thomas J Bell from Milton Keynes.",
+  keywords: ["photography portfolio", "professional photography", "landscape photos", "wildlife photography", "automotive photography", "photo gallery"],
+  url: "/photography",
+  image: "/photography/bluebell-wood.png",
+});
 
-export default function photographyLayout({ children }) {
+const breadcrumbItems = [
+  { name: "Home", url: "https://www.thomasjbell.co.uk" },
+  { name: "Photography", url: "https://www.thomasjbell.co.uk/photography" }
+];
+
+export default function PhotographyLayout({ children }) {
   return (
     <>
       <Navbar />
+      <BreadcrumbSchema items={breadcrumbItems} />
       {children}
     </>
   );

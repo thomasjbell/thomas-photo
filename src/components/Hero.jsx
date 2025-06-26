@@ -1,9 +1,8 @@
-// components/Hero.jsx
+// src/components/Hero.jsx
 "use client";
 
 import Image from "next/image";
 import { Caveat } from "next/font/google";
-import { Sun, Moon, Lightbulb } from "lucide-react";
 import { useState, useEffect } from "react";
 import Button from "./Button";
 import { useDarkMode } from "./DarkModeProvider";
@@ -39,7 +38,7 @@ export default function Hero() {
     <div className="relative h-screen">
       {/* Background image - desktop */}
       <div
-        className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+        className={`absolute inset-0 transition-opacity duration-300 ease-out ${
           isMobile ? "opacity-0" : "opacity-100"
         }`}
       >
@@ -55,7 +54,7 @@ export default function Hero() {
 
       {/* Background image - mobile */}
       <div
-        className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+        className={`absolute inset-0 transition-opacity duration-300 ease-out ${
           isMobile ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -71,18 +70,33 @@ export default function Hero() {
 
       {/* Hero content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center content-center h-full">
-        <div className="text-white max-w-2xl ">
-          <div className={caveat.className}>
+        <div className="text-white max-w-2xl">
+          <motion.div 
+            className={caveat.className}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
             <h1 className="items-centre text-5xl sm:text-6xl md:text-7xl font-bold my-4">
               THOMAS J BELL
             </h1>
-          </div>
+          </motion.div>
 
-          <p className="text-lg sm:text-xl md:text-2xl my-6  px-2">
+          <motion.p 
+            className="text-lg sm:text-xl md:text-2xl my-6 px-2"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+          >
             P&nbsp;H&nbsp;O&nbsp;T&nbsp;O&nbsp;&&nbsp;B&nbsp;I&nbsp;O
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+          >
             <Button
               href="/photography"
               prefetch={true}
@@ -94,7 +108,7 @@ export default function Hero() {
             <Button href="/about" variant="outline" size="medium">
               About Me
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
