@@ -27,13 +27,5 @@ export default function sitemap() {
     },
   ];
 
-  // Add individual photo pages if you plan to create them later
-  const photoRoutes = photographyItems.map((item) => ({
-    url: `${baseUrl}/photography/${item.id}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }));
-
   return [...routes, ...photoRoutes];
 }
