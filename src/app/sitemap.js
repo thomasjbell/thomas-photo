@@ -27,5 +27,5 @@ export default function sitemap() {
     },
   ];
 
-  return [...routes, ...photoRoutes];
+  return [...routes];
 }
