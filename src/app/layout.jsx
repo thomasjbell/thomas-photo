@@ -1,29 +1,37 @@
 // src/app/layout.jsx
 import "./globals.css";
 import Footer from "@/components/Footer";
-import { Inter } from "next/font/google";
 import { DarkModeProvider } from "@/components/DarkModeProvider";
 import { PersonSchema, WebsiteSchema } from "@/components/StructuredData";
 import { generateMetadata as generateSEOMetadata } from "@/utils/seo";
+import { Nunito, Fira_Sans } from "next/font/google";
 
-const inter = Inter({
+const nunito = Nunito({
   subsets: ["latin"],
+  variable: "--font-nunito",
 });
+
+const firaSans = Fira_Sans({
+  subsets: ["latin"],
+  variable: "--font-fira",
+  weight: ["400", "500", "600", "700"]
+});
+
 
 export const metadata = generateSEOMetadata({});
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-GB" className={inter.className}>
+    <html lang="en-GB" className={`${nunito.variable} ${firaSans.variable}`}>
       <head>
         <PersonSchema />
         <WebsiteSchema />
-        
+
         {/* Google Analytics - Replace with your actual GA4 ID */}
-        {process.env.NODE_ENV === 'production' && (
+        {process.env.NODE_ENV === "production" && (
           <>
-            <script 
-              async 
+            <script
+              async
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
             />
             <script

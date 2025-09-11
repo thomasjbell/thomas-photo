@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { Bird } from "lucide-react";
 
-const linksClass = "text-slate-500 hover:text-slate-300 dark:text-slate-600 dark:hover:text-slate-400 transition-colors duration-250 ease-in-out";
+const linksClass = "text-slate-400 hover:text-slate-200 dark:text-slate-500 dark:hover:text-slate-300 transition-colors duration-250 ease-in-out";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-400 dark:bg-slate-950 dark:text-slate-500 py-12">
+    <footer className="bg-slate-900 text-slate-300 dark:bg-slate-950 dark:text-slate-400 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Thomas J Bell</h3>
-            <p className="text-slate-500 dark:text-slate-600">
+            <p className="text-slate-400 dark:text-slate-500">
               Amateur Photography by
               <br />
               Thomas J Bell

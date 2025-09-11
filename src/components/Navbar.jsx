@@ -38,7 +38,7 @@ export default function Navbar() {
             </motion.div>
             <Link
               href="/"
-              className="font-bold text-xl text-slate-800 dark:text-slate-50 hover:text-slate-600 dark:hover:text-slate-300 transition-colors duration-200"
+              className="font-bold font-fira text-xl text-slate-800 dark:text-slate-50 hover:text-slate-600 dark:hover:text-slate-300 transition-colors duration-200"
             >
               T&nbsp;H&nbsp;O&nbsp;M&nbsp;A&nbsp;S &nbsp; J &nbsp;
               B&nbsp;E&nbsp;L&nbsp;L
