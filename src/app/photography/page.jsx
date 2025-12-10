@@ -60,22 +60,22 @@ export default function PhotographyPage() {
       <PhotographyPortfolioSchema photos={photographyItems} />
       <LoadingScreen isLoading={isLoading} />
       
-      <section className="py-8 bg-slate-50 dark:bg-slate-900" id="photography">
+      <section className="py-8 bg-mono-50 dark:bg-mono-500" id="photography">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-8 md:mb-12 bg-white dark:bg-slate-800 border dark:border-slate-700 border-slate-200 rounded-2xl p-6 md:p-8 drop-shadow-lg">
-            <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-4">
-              Photography Portfolio
+          <div className="text-center mb-8 md:mb-12 bg-white dark:bg-mono-500 border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg">
+            <h1 className="text-4xl font-black text-slate-900 dark:text-mono-200 mb-4">
+              PHOTOGRAPHY
             </h1>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            <p className="text-lg text-mono-500 dark:text-mono-300 max-w-2xl mx-auto">
               Explore a selection of my best work across different photography categories including landscapes, wildlife, and automotive photography.
             </p>
           </div>
 
-          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3 border border-slate-200 dark:border-slate-700 p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-800 drop-shadow-lg">
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3 border border-mono-200 dark:border-mono-400 p-6 md:p-8 bg-white dark:bg-mono-500 drop-shadow-lg">
             {randomizedItems.map((item, index) => (
               <div
                 key={item.id}
-                className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-200 ease-out rounded-md"
+                className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-200 ease-out"
               >
                 <div className="relative w-full">
                   <Image
@@ -83,7 +83,7 @@ export default function PhotographyPage() {
                     alt={`${item.title} - Professional photography by Thomas J Bell`}
                     width={500}
                     height={500}
-                    className="w-full h-auto object-cover transition-transform duration-200 ease-out group-hover:scale-105 rounded-md"
+                    className="w-full h-auto object-cover transition-transform duration-200 ease-out group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
                     priority={index < 2}
                     loading={index < 2 ? "eager" : "lazy"}

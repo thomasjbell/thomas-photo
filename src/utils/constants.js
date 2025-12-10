@@ -135,3 +135,26 @@ export const photographyItems = [
     imagePath: "/photography/young-kestrel.png",
   },
 ];
+// src/utils/constants.js (add this to your existing file)
+
+export const projectItems = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    description: "A full-featured online shop with cart functionality, payment integration, and admin dashboard.",
+    imagePath: "/images/projects/ecommerce.jpg",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Stripe"],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/yourusername/project"
+  },
+  {
+    id: 2,
+    title: "Portfolio Website",
+    description: "A modern, responsive portfolio showcasing photography and web development work.",
+    imagePath: "/images/projects/portfolio.jpg",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://example.com",
+    githubUrl: null
+  },
+  // Add more projects as needed
+];

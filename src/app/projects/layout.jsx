@@ -4,16 +4,14 @@ import { BreadcrumbSchema } from "@/components/StructuredData";
 import { generateMetadata as generateSEOMetadata } from "@/utils/seo";
 
 export const metadata = generateSEOMetadata({
-  title: "Photography Portfolio | Professional Photography Gallery",
+  title: "Thomas J Bell | Projects",
   description:
-    "Browse through a stunning collection of professional photographs including landscapes, wildlife, and automotive photography by Thomas J Bell from Milton Keynes.",
+    "Browse a selection of projects by Thomas J Bell, including 3D animation and web development projects.",
   keywords: [
-    "photography portfolio",
-    "professional photography",
-    "landscape photos",
-    "wildlife photography",
-    "automotive photography",
-    "photo gallery",
+    "web development",
+    "home projects",
+    "blender projects",
+    "3d rendering"
   ],
   url: "/photography",
   image: "/photography/bluebell-wood.png",
@@ -24,7 +22,7 @@ const breadcrumbItems = [
   { name: "Photography", url: "https://www.thomasjbell.co.uk/photography" },
 ];
 
-export default function PhotographyLayout({ children }) {
+export default function ProjectsLayout({ children }) {
   return (
     <>
       <Navbar />

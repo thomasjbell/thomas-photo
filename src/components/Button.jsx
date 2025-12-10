@@ -19,8 +19,8 @@ const Button = forwardRef(
       display: "inline-flex",
       alignItems: "center",
       justifyContent: "center",
-      borderRadius: "2rem",
-      fontWeight: "500",
+      borderRadius: "1.5rem",
+      fontWeight: "600",
       transition: "transform 0.25s ease, box-shadow 0.25s ease-in-out",
       position: "relative",
       overflow: "hidden",
@@ -40,7 +40,8 @@ const Button = forwardRef(
       outline: {
         backgroundColor: "transparent",
         color: "white",
-        // No border
+        border: "2px solid white",
+      
       },
       ghost: {
         backgroundColor: "transparent",
@@ -50,9 +51,9 @@ const Button = forwardRef(
 
     // Size classes
     const sizeClasses = {
-      small: "py-2 px-4 text-sm",
-      medium: "py-3 px-6 text-base",
-      large: "py-4 px-8 text-lg",
+      small: "py-4 px-4 text-sm",
+      medium: "py-6 px-2 text-3xl font-bold",
+      large: "py-8 px-8 text-lg",
     };
 
     // Combined styles

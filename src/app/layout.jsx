@@ -5,6 +5,7 @@ import { DarkModeProvider } from "@/components/DarkModeProvider";
 import { PersonSchema, WebsiteSchema } from "@/components/StructuredData";
 import { generateMetadata as generateSEOMetadata } from "@/utils/seo";
 import { Nunito, Fira_Sans } from "next/font/google";
+import Navbar from "@/components/Navbar";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <head>
         <PersonSchema />
         <WebsiteSchema />
+        
 
         {/* Google Analytics - Replace with your actual GA4 ID */}
         {process.env.NODE_ENV === "production" && (
@@ -51,7 +53,7 @@ export default function RootLayout({ children }) {
         )}
       </head>
       <DarkModeProvider>
-        <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50">
+        <body className="min-h-screen flex flex-col bg-mono-50 dark:bg-mono-500 text-slate-900 dark:text-slate-50">
           <main className="flex-grow">{children}</main>
           <Footer />
         </body>

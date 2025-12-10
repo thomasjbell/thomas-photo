@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { Bird } from "lucide-react";
 
-const linksClass = "text-slate-400 hover:text-slate-200 dark:text-slate-500 dark:hover:text-slate-300 transition-colors duration-250 ease-in-out";
+const linksClass = "text-mono-200 hover:text-mono-100 dark:text-mono-300 dark:hover:text-mono-200 transition-colors duration-250 ease-in-out";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300 dark:bg-slate-950 dark:text-slate-400 py-12">
+    <footer className="bg-mono-400 text-mono-300 dark:bg-mono-500 dark:text-mono-300 py-12 border-t border-mono-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">Thomas J Bell</h3>
-            <p className="text-slate-400 dark:text-slate-500">
+            <h3 className="text-3xl font-bold mb-4">Thomas J Bell</h3>
+            <p className="text-mono-200 dark:text-mono-300">
               Amateur Photography by
               <br />
               Thomas J Bell
@@ -71,8 +71,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400">
+        <div className="border-t border-mono-300 dark:border-mono-400 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-mono-300">
             &copy; {new Date().getFullYear()} Thomas J Bell. All rights
             reserved.
           </p>
@@ -81,7 +81,7 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://equalab.uk/"
-              className="text-slate-500 hover:text-slate-400 transition-colors duration-250"
+              className="text-mono-300 hover:text-mono-200 transition-colors duration-250"
             >
               <span className="sr-only">EquaLab</span>
               <Bird width={24} height={24} fill="currentColor" />
@@ -89,7 +89,7 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://www.instagram.com/thomas.j.bell/"
-              className="text-slate-500 hover:text-slate-400 transition-colors duration-250"
+              className="text-mono-300 hover:text-mono-200 transition-colors duration-250"
             >
               <span className="sr-only">Instagram</span>
               <svg
@@ -107,7 +107,7 @@ export default function Footer() {
             <a
               target="_blank"
               href="https://www.linkedin.com/in/thomasbell2/"
-              className="text-slate-500 hover:text-slate-400 transition-colors duration-250"
+              className="text-mono-300 hover:text-mono-200 transition-colors duration-250"
             >
               <span className="sr-only">LinkedIn</span>
               <svg

@@ -11,7 +11,7 @@ export default function LoadingScreen({ isLoading }) {
           animate={{ opacity: 1, backdropFilter: "blur(8px)" }}
           exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-50/80 dark:bg-slate-900/80"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-50/80 dark:bg-mono-500/80"
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
