@@ -5,6 +5,7 @@ Allow: /
 # Specific allow rules
 Allow: /photography
 Allow: /about
+Allow: /projects
 Allow: /images/
 Allow: /photography/
 

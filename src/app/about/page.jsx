@@ -49,15 +49,17 @@ const profileData = {
     { name: "Rock Climbing", emoji: "🧗", description: "Indoor and outdoor climbing" },
     { name: "Photography", emoji: "📸", description: "Landscape and wildlife" },
     { name: "Hiking", emoji: "🥾", description: "Mountain and countryside walks" },
-    { name: "Gaming", emoji: "🎮", description: "Strategy and simulation games" },
-    { name: "Piano", emoji: "🎹", description: "Classical and contemporary pieces" }
+    { name: "Krav Maga", emoji: "🥋", description: "Self-defence and technique" },
+    { name: "Piano", emoji: "🎹", description: "Classical and contemporary pieces" },
+    { name: "Gym", emoji: "🏋️", description: "Strength and endurance" }
+
   ],
   qualifications: {
     current: [
-      { subject: "A Level Mathematics", grade: "A* (Predicted)", level: "A Level" },
-      { subject: "A Level Physics", grade: "A* (Predicted)", level: "A Level" },
-      { subject: "AS Level Computer Science", grade: "A (Predicted)", level: "AS Level" },
-      { subject: "EAL Engineering", grade: "Distinction* (Predicted)", level: "BTEC" }
+      { subject: "A Level Mathematics", grade: "A (Predicted)", level: "A Level" },
+      { subject: "A Level Physics", grade: "A (Predicted)", level: "A Level" },
+      { subject: "AS Level Computer Science", grade: "B (Achieved)", level: "AS Level" },
+      { subject: "EAL Engineering", grade: "Distinction (Predicted)", level: "BTEC" }
     ],
     achieved: [
       { subject: "GCSE Mathematics", grade: "8", level: "GCSE" },

@@ -140,12 +140,12 @@ export const photographyItems = [
 export const projectItems = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-featured online shop with cart functionality, payment integration, and admin dashboard.",
-    imagePath: "/images/projects/ecommerce.jpg",
-    technologies: ["Next.js", "React", "Tailwind CSS", "Stripe"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/yourusername/project"
+    title: "EquaLab Equations",
+    description: "A prototype web app for equation solving and calculations.",
+    imagePath: "/images/projects/equalab-equations.png",
+    technologies: ["Next.js", "React", "Tailwind CSS"],
+    liveUrl: "https://equations.equalab.uk",
+    githubUrl: "https://github.com/thomasjbell/equalab-equations"
   },
   {
     id: 2,

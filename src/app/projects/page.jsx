@@ -64,8 +64,7 @@ export default function ProjectsPage() {
               PROJECTS
             </h1>
             <p className="text-lg text-mono-500 dark:text-mono-300 max-w-2xl mx-auto">
-              A showcase of websites, applications, and digital projects I've
-              created using modern web technologies.
+              A showcase of my creations, from websites to blender projects.
             </p>
           </div>
 

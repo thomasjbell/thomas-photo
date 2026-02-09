@@ -10,11 +10,12 @@ import Logo from "./ui/Logo";
 const navPages = {
   class: {
     classname:
-      "font-semibold text-lg dark:hover:text-mono-300 hover:text-mono-400 transition-colors duration-200 text-mono-50 dark:text-mono-500 px-4 py-1 ",
+      "font-semibold text-lg dark:hover:text-mono-300 hover:text-mono-400 transition-colors duration-200 text-mono-50 dark:text-mono-500 px-4 py-1",
   },
   home: { href: "/", label: "HOME" },
   photography: { href: "/photography", label: "PHOTOGRAPHY" },
   about: { href: "/about", label: "BIO" },
+  projects: { href: "/projects", label: "PROJECTS" },
 };
 
 export default function Navbar() {
@@ -43,6 +44,14 @@ export default function Navbar() {
             {navPages.home.label}
           </Link>
           <Link
+            href={navPages.projects.href}
+            prefetch={true}
+            className={navPages.class.classname}
+            style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
+          >
+            {navPages.projects.label}
+          </Link>
+          <Link
             href={navPages.photography.href}
             prefetch={true}
             className={navPages.class.classname}
@@ -54,6 +63,7 @@ export default function Navbar() {
             href={navPages.about.href}
             className={navPages.class.classname}
             style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
+            
           >
             {navPages.about.label}
           </Link>
@@ -65,7 +75,7 @@ export default function Navbar() {
             href="https://instagram.com/thomas.j.bell"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-mono-50 hover:text-slate-900 dark:text-mono-500 dark:hover:text-mono-100 transition-all duration-200 p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50"
+            className="text-mono-50 hover:text-mono-500 dark:text-mono-500 dark:hover:text-mono-400 transition-all duration-200"
             aria-label="Instagram"
             whileHover={{ scale: 1.1, rotate: 3 }}
             whileTap={{ scale: 0.95 }}
@@ -79,7 +89,7 @@ export default function Navbar() {
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-mono-50 hover:text-slate-900 dark:text-mono-500 dark:hover:text-mono-100 transition-all duration-200 p-2 rounded-full hover:bg-slate-200/50 dark:hover:bg-slate-800/50"
+            className="text-mono-50 hover:text-mono-500 dark:text-mono-500 dark:hover:text-mono-400 transition-all duration-200"
             aria-label="LinkedIn"
             whileHover={{ scale: 1.1, rotate: 3 }}
             whileTap={{ scale: 0.95 }}

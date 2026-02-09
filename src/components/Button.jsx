@@ -104,7 +104,7 @@ const Button = forwardRef(
           {...props}
         >
           <span style={{ position: "relative", zIndex: 2 }}>{children}</span>
-          <div style={frostStyle} />
+ 
         </Link>
       );
     }
@@ -119,7 +119,7 @@ const Button = forwardRef(
         {...props}
       >
         <span style={{ position: "relative", zIndex: 2 }}>{children}</span>
-        <div style={frostStyle} />
+   
       </button>
     );
   }
