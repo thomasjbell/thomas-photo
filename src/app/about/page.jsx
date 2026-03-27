@@ -110,7 +110,7 @@ const GradeCard = ({ qualification, index }) => {
         y: -1,
         transition: { duration: 0.15, ease: "easeOut" }
       }}
-      className="bg-white dark:bg-mono-500 rounded-lg p-4 border border-mono-200 dark:border-mono-400 shadow-md hover:shadow-lg transition-shadow duration-200"
+      className="bg-white dark:bg-mono-500 rounded-2xl p-4 border border-mono-200 dark:border-mono-400 shadow-md hover:shadow-lg transition-shadow duration-200"
     >
       <div className="flex justify-between items-start mb-3">
         <h4 className="font-semibold text-slate-900 dark:text-mono-200 text-sm leading-tight">
@@ -144,7 +144,7 @@ const HobbyCard = ({ hobby, index }) => {
         y: -1,
         transition: { duration: 0.2, ease: "easeOut" }
       }}
-      className="bg-mono-50 dark:bg-mono-400 rounded-xl p-6 border border-mono-200 dark:border-mono-400 hover:shadow-lg transition-all duration-200 cursor-pointer relative overflow-hidden"
+      className="bg-mono-50 dark:bg-mono-400 rounded-2xl p-6 border border-mono-200 dark:border-mono-400 hover:shadow-lg transition-all duration-200 cursor-pointer relative overflow-hidden"
     >
       <div className="text-center relative z-10">
         <motion.div 
@@ -208,7 +208,7 @@ export default function BiographyPage() {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center mb-8 md:mb-12"
         >
-          <div className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400">
+          <div className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <motion.div 
                 className="relative"
@@ -286,7 +286,7 @@ export default function BiographyPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
         >
-          <div className="bg-white dark:bg-mono-500 drop-shadow-lg border border-mono-200 dark:border-mono-400 p-2">
+          <div className="bg-white dark:bg-mono-500 drop-shadow-lg border border-mono-200 dark:border-mono-400 p-2 rounded-2xl">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
               {sections.map((section, index) => {
                 const Icon = section.icon;
@@ -333,7 +333,7 @@ export default function BiographyPage() {
             >
               <motion.div 
                 variants={fadeIn}
-                className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
+                className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl"
               >
                 <motion.h2 
                   className="text-3xl font-bold text-slate-900 dark:text-mono-200 mb-6 text-center"
@@ -356,7 +356,7 @@ export default function BiographyPage() {
               {/* Hobbies Grid */}
               <motion.div 
                 variants={fadeIn}
-                className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
+                className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl"
               >
                 <motion.h3 
                   className="text-2xl font-bold text-slate-900 dark:text-mono-200 mb-6 text-center"
@@ -390,7 +390,7 @@ export default function BiographyPage() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-8"
             >
               <motion.div 
-                className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
+                className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl"
                 whileHover={{ scale: 1.002 }}
                 transition={{ duration: 0.2 }}
               >

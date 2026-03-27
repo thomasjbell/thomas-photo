@@ -15,9 +15,8 @@ const nunito = Nunito({
 const firaSans = Fira_Sans({
   subsets: ["latin"],
   variable: "--font-fira",
-  weight: ["400", "500", "600", "700"]
+  weight: ["400", "500", "600", "700"],
 });
-
 
 export const metadata = generateSEOMetadata({});
 
@@ -27,7 +26,6 @@ export default function RootLayout({ children }) {
       <head>
         <PersonSchema />
         <WebsiteSchema />
-        
 
         {/* Google Analytics - Replace with your actual GA4 ID */}
         {process.env.NODE_ENV === "production" && (
@@ -54,6 +52,7 @@ export default function RootLayout({ children }) {
       </head>
       <DarkModeProvider>
         <body className="min-h-screen flex flex-col bg-mono-50 dark:bg-mono-500 text-slate-900 dark:text-slate-50">
+          <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
         </body>

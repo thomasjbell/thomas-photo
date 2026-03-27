@@ -62,7 +62,7 @@ export default function PhotographyPage() {
       
       <section className="py-8 bg-mono-50 dark:bg-mono-500" id="photography">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-8 md:mb-12 bg-white dark:bg-mono-500 border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg">
+          <div className="text-center mb-8 md:mb-12 bg-white dark:bg-mono-500 border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg rounded-2xl">
             <h1 className="text-4xl font-black text-slate-900 dark:text-mono-200 mb-4">
               PHOTOGRAPHY
             </h1>
@@ -71,11 +71,11 @@ export default function PhotographyPage() {
             </p>
           </div>
 
-          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3 border border-mono-200 dark:border-mono-400 p-6 md:p-8 bg-white dark:bg-mono-500 drop-shadow-lg">
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-3 space-y-3 border border-mono-200 dark:border-mono-400 p-6 md:p-8 bg-white dark:bg-mono-500 drop-shadow-lg rounded-2xl">
             {randomizedItems.map((item, index) => (
               <div
                 key={item.id}
-                className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-200 ease-out"
+                className="relative overflow-hidden break-inside-avoid group shadow-sm hover:shadow-md transition-all duration-200 ease-out rounded-2xl"
               >
                 <div className="relative w-full">
                   <Image

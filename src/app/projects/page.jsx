@@ -59,7 +59,7 @@ export default function ProjectsPage() {
 
       <section className="py-8 bg-mono-50 dark:bg-mono-500" id="projects">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-8 md:mb-12 bg-white dark:bg-mono-500 border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg">
+          <div className="text-center mb-8 md:mb-12 bg-white dark:bg-mono-500 border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg rounded-2xl">
             <h1 className="text-4xl font-black text-slate-900 dark:text-mono-200 mb-4">
               PROJECTS
             </h1>
@@ -68,11 +68,11 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border border-mono-200 dark:border-mono-400 p-6 md:p-8 bg-white dark:bg-mono-500 drop-shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border border-mono-200 dark:border-mono-400 p-6 md:p-8 bg-white dark:bg-mono-500 drop-shadow-lg rounded-2xl">
             {randomizedItems.map((item, index) => (
               <div
                 key={item.id}
-                className="relative overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-300 ease-out bg-mono-50 dark:bg-mono-600 border border-mono-200 dark:border-mono-400"
+                className="relative overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-300 ease-out bg-mono-50 dark:bg-mono-400 rounded-2xl"
               >
                 <div className="relative w-full aspect-video overflow-hidden">
                   <Image
@@ -91,10 +91,10 @@ export default function ProjectsPage() {
                 </div>
 
                 <div className="p-5">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-mono-200 mb-2 group-hover:text-slate-700 dark:group-hover:text-mono-100 transition-colours">
+                  <h3 className="text-xl font-bold text-mono-50 dark:text-mono-50 mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-mono-500 dark:text-mono-300 mb-4 line-clamp-2">
+                  <p className="text-sm text-mono-200 dark:text-mono-200 mb-4 line-clamp-2">
                     {item.description}
                   </p>
 
@@ -102,7 +102,7 @@ export default function ProjectsPage() {
                     {item.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 text-xs font-medium bg-mono-200 dark:bg-mono-500 text-mono-700 dark:text-mono-200 rounded"
+                        className="px-2 py-1 text-xs font-medium bg-mono-200 dark:bg-mono-500 text-mono-700 dark:text-mono-50 rounded"
                       >
                         {tech}
                       </span>
@@ -115,7 +115,7 @@ export default function ProjectsPage() {
                         href={item.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 text-center px-4 py-2 bg-slate-900 dark:bg-mono-200 text-white dark:text-mono-900 font-semibold hover:bg-slate-700 dark:hover:bg-mono-100 transition-colours duration-200"
+                        className="flex-1 text-center px-4 py-2 rounded-lg bg-slate-900 dark:bg-mono-200 text-white dark:text-mono-500 font-semibold hover:bg-slate-700 dark:hover:bg-mono-100 transition-colours duration-200"
                       >
                         View Live
                       </a>
@@ -125,7 +125,7 @@ export default function ProjectsPage() {
                         href={item.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 text-center px-4 py-2 border-2 border-slate-900 dark:border-mono-200 text-slate-900 dark:text-mono-200 font-semibold hover:bg-slate-900 hover:text-white dark:hover:bg-mono-200 dark:hover:text-mono-900 transition-all duration-200"
+                        className="flex-1 text-center px-4 py-2 rounded-lg border-2 border-slate-900 dark:border-mono-200 text-slate-900 dark:text-mono-200 font-semibold dark:bg-mono-400 hover:bg-mono-500 hover:text-white dark:hover:bg-mono-500 dark:hover:text-mono-900 transition-all duration-200"
                       >
                         GitHub
                       </a>
