@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
       <DarkModeProvider>
         <body className="min-h-screen flex flex-col bg-mono-50 dark:bg-mono-500 text-slate-900 dark:text-slate-50">
           <Navbar />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow md:pt-0 pt-14">{children}</main>
           <Footer />
         </body>
       </DarkModeProvider>

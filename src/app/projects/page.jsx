@@ -68,7 +68,7 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border border-mono-200 dark:border-mono-400 p-6 md:p-8 bg-white dark:bg-mono-500 drop-shadow-lg rounded-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border border-mono-200 dark:border-mono-400 p-4 md:p-6 bg-white dark:bg-mono-500 drop-shadow-lg rounded-2xl">
             {randomizedItems.map((item, index) => (
               <div
                 key={item.id}

@@ -1,138 +1,167 @@
+// To add a new photo: drop it in /public/images/photography/, then add an entry below.
+// aspectRatio = width ÷ height  (e.g. landscape 3:2 = 1.5, portrait 2:3 = 0.667, square = 1)
 export const photographyItems = [
   {
     id: 1,
     title: "Windmill Sunset",
     imagePath: "/photography/windmill.png",
+    aspectRatio: 1.5,
   },
   {
     id: 2,
     title: "Lone Tree",
     imagePath: "/photography/lone-tree.png",
+    aspectRatio: 0.667,
   },
   {
     id: 3,
     title: "Hillman Imp",
     imagePath: "/photography/hillman-imp.png",
+    aspectRatio: 0.667,
   },
   {
     id: 4,
     title: "GT40 Rear",
     imagePath: "/photography/gt40-rear.png",
+    aspectRatio: 0.667,
   },
   {
     id: 5,
     title: "GT40 Exhaust",
     imagePath: "/photography/gt40-exhaust.png",
+    aspectRatio: 0.667,
   },
   {
     id: 6,
     title: "Golf GTI Cabriolet",
     imagePath: "/photography/golf-gti-cabrio.png",
+    aspectRatio: 0.667,
   },
   {
     id: 7,
     title: "Bluebell Wood",
     imagePath: "/photography/bluebell-wood.png",
+    aspectRatio: 0.667,
   },
   {
     id: 8,
     title: "Saturday Job",
     imagePath: "/photography/saturday-job.png",
+    aspectRatio: 1.5,
   },
   {
     id: 9,
     title: "Peregrin Falcon",
     imagePath: "/photography/peregrin-falcon.png",
+    aspectRatio: 1.5,
   },
   {
     id: 10,
     title: "Green Tree",
     imagePath: "/photography/green-tree.png",
+    aspectRatio: 1.5,
   },
   {
     id: 11,
     title: "Factory Sunset",
     imagePath: "/photography/factory.png",
+    aspectRatio: 1.5,
   },
   {
     id: 12,
     title: "Baby Eagle Owl",
     imagePath: "/photography/baby-eagle-owl.png",
+    aspectRatio: 1.5,
   },
   {
     id: 13,
     title: "Frosty Sunrise",
     imagePath: "/photography/frosty-sunrise.png",
+    aspectRatio: 1.5,
   },
   {
     id: 14,
     title: "Crow",
     imagePath: "/photography/crow.png",
+    aspectRatio: 1.5,
   },
   {
     id: 15,
     title: "G-ARUL LeVier Cosmic Wind",
     imagePath: "/photography/g-arul-plane.png",
+    aspectRatio: 1.5,
   },
   {
     id: 16,
     title: "Alpine A110",
     imagePath: "/photography/alpine-a110.png",
+    aspectRatio: 1.5,
   },
   {
     id: 17,
     title: "Datsun 260Z",
     imagePath: "/photography/datsun-260z.png",
+    aspectRatio: 1.5,
   },
   {
     id: 18,
     title: "EMR Passenger Train",
     imagePath: "/photography/emr-train.png",
+    aspectRatio: 1.5,
   },
   {
     id: 19,
     title: "Fairlie Engine",
     imagePath: "/photography/fairlie-engine.png",
+    aspectRatio: 1.5,
   },
   {
     id: 20,
     title: "Malham Crag",
     imagePath: "/photography/malham-crag.png",
+    aspectRatio: 1.5,
   },
   {
     id: 21,
     title: "Malham Tarn",
     imagePath: "/photography/malham-tarn.png",
+    aspectRatio: 1.5,
   },
   {
     id: 22,
     title: "Snowy Owl",
     imagePath: "/photography/snowy-owl.png",
+    aspectRatio: 0.667,
   },
   {
     id: 23,
     title: "Stowe Bridge",
     imagePath: "/photography/stowe-bridge.png",
+    aspectRatio: 1.5,
   },
   {
     id: 24,
     title: "Stowe House",
     imagePath: "/photography/stowe-house.png",
+    aspectRatio: 1.5,
   },
   {
     id: 25,
     title: "Tawny Owl",
     imagePath: "/photography/tawny-owl.png",
+    aspectRatio: 0.667,
   },
   {
     id: 26,
     title: "Toyota Trueno",
     imagePath: "/photography/trueno.png",
+    aspectRatio: 1.5,
   },
   {
     id: 27,
     title: "Young Kestrel",
     imagePath: "/photography/young-kestrel.png",
+    aspectRatio: 0.667,
   },
 ];
 // src/utils/constants.js (add this to your existing file)
@@ -145,16 +174,17 @@ export const projectItems = [
     imagePath: "/images/projects/equalab-equations.png",
     technologies: ["Next.js", "React", "Tailwind CSS"],
     liveUrl: "https://equations.equalab.uk",
-    githubUrl: "https://github.com/thomasjbell/equalab-equations"
+    githubUrl: "https://github.com/thomasjbell/equalab-equations",
   },
   {
     id: 2,
     title: "Portfolio Website",
-    description: "A modern, responsive portfolio showcasing photography and web development work.",
+    description:
+      "A modern, responsive portfolio showcasing photography and web development work.",
     imagePath: "/images/projects/portfolio.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://example.com",
-    githubUrl: null
+    githubUrl: null,
   },
   // Add more projects as needed
 ];

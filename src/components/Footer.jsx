@@ -51,7 +51,7 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="text-3xl font-bold mb-4">Contact Info</h3>
+            <h3 className="text-3xl font-bold mb-4 text-mono-200/95">Contact Info</h3>
             <address className="not-italic">
               <a
                 href="https://maps.app.goo.gl/9HhU5P1jAEBxHHRe6"
@@ -74,7 +74,7 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="text-3xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-3xl font-bold mb-4 text-mono-200/95">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className={linksClass}>
