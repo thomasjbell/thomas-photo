@@ -323,10 +323,10 @@ export const projectItems = [
     id: 2,
     title: "Portfolio Website",
     description:
-      "A modern, responsive portfolio showcasing photography and web development work.",
+      "A modern, responsive portfolio showcasing photography and projects.",
     imagePath: "/images/projects/portfolio.jpg",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://example.com",
+    liveUrl: "https://www.thomasjbell.co.uk",
     githubUrl: null,
   },
   // Add more projects as needed
