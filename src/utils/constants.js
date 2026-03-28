@@ -163,8 +163,151 @@ export const photographyItems = [
     imagePath: "/photography/young-kestrel.png",
     aspectRatio: 0.667,
   },
+  {
+    id: 28,
+    title: "Engineering in Black and White 1",
+    imagePath: "/photography/engineering-1.JPG",
+    aspectRatio: 1.5,
+  },
+  {
+    id: 29,
+    title: "Engineering in Black and White 2",
+    imagePath: "/photography/engineering-2.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 30,
+    title: "Engineering in Black and White 3",
+    imagePath: "/photography/engineering-3.JPG",
+    aspectRatio: 1.5,
+  },
+  {
+    id: 31,
+    title: "Engineering in Black and White 4",
+    imagePath: "/photography/engineering-4.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 32,
+    title: "Engineering in Black and White 5",
+    imagePath: "/photography/engineering-5.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 33,
+    title: "Engineering in Black and White 6",
+    imagePath: "/photography/engineering-6.JPG",
+    aspectRatio: 1.5,
+  },
+  {
+    id: 34,
+    title: "Engineering in Black and White 7",
+    imagePath: "/photography/engineering-7.JPG",
+    aspectRatio: 1.5,
+  },
+  {
+    id: 35,
+    title: "Engineering in Black and White 8",
+    imagePath: "/photography/engineering-8.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 36,
+    title: "Engineering in Black and White 9",
+    imagePath: "/photography/engineering-9.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 37,
+    title: "Hay-on-Wye 1",
+    imagePath: "/photography/hay-on-wye-1.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 38,
+    title: "Hay-on-Wye 2",
+    imagePath: "/photography/hay-on-wye-2.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 39,
+    title: "Hay-on-Wye 3",
+    imagePath: "/photography/hay-on-wye-3.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 40,
+    title: "Hay-on-Wye 4",
+    imagePath: "/photography/hay-on-wye-4.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 41,
+    title: "Hereford in Black and White 1",
+    imagePath: "/photography/hereford-1.JPG",
+    aspectRatio: 1.5,
+  },
+  {
+    id: 42,
+    title: "Hereford in Black and White 2",
+    imagePath: "/photography/hereford-2.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 43,
+    title: "Hereford in Black and White 3",
+    imagePath: "/photography/hereford-3.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 44,
+    title: "Hereford in Black and White 4",
+    imagePath: "/photography/hereford-4.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 45,
+    title: "Hereford in Black and White 5",
+    imagePath: "/photography/hereford-5.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 46,
+    title: "Hereford in Black and White 6",
+    imagePath: "/photography/hereford-6.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 47,
+    title: "Wye Valley 1",
+    imagePath: "/photography/wye-valley-1.JPG",
+    aspectRatio: 1.5,
+  },
+  {
+    id: 48,
+    title: "Wye Valley 2",
+    imagePath: "/photography/wye-valley-2.JPG",
+    aspectRatio: 1.5,
+  },
+  {
+    id: 49,
+    title: "Wye Valley 3",
+    imagePath: "/photography/wye-valley-3.JPG",
+    aspectRatio: 1.5,
+  },
+  {
+    id: 50,
+    title: "Wye Valley 4",
+    imagePath: "/photography/wye-valley-4.JPG",
+    aspectRatio: 0.667,
+  },
+  {
+    id: 51,
+    title: "Wye Valley 5",
+    imagePath: "/photography/wye-valley-5.JPG",
+    aspectRatio: 1.5,
+  },
 ];
-// src/utils/constants.js (add this to your existing file)
 
 export const projectItems = [
   {

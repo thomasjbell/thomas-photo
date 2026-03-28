@@ -59,7 +59,7 @@ const profileData = {
       { subject: "A Level Mathematics", grade: "A (Predicted)", level: "A Level" },
       { subject: "A Level Physics", grade: "A (Predicted)", level: "A Level" },
       { subject: "AS Level Computer Science", grade: "B (Achieved)", level: "AS Level" },
-      { subject: "EAL Engineering", grade: "Distinction (Predicted)", level: "BTEC" }
+      { subject: "EAL Engineering", grade: "Distinction (Achieved)", level: "BTEC" }
     ],
     achieved: [
       { subject: "GCSE Mathematics", grade: "8", level: "GCSE" },
