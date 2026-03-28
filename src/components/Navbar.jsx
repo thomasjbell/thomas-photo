@@ -250,7 +250,7 @@ export default function Navbar() {
             >
               <Logo className="fill-mono-500 dark:fill-mono-50 h-6 w-6" />
             </motion.div>
-            <span className="font-bold font-fira text-sm tracking-widest text-mono-500 dark:text-mono-50">
+            <span className="font-bold font-fira text-lg tracking-widest text-mono-500 dark:text-mono-50">
               THOMAS J BELL
             </span>
           </Link>
