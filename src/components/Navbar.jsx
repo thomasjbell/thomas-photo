@@ -223,7 +223,7 @@ export default function Navbar() {
             </motion.a>
 
             <motion.a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/thomasbell2"
               target="_blank"
               rel="noopener noreferrer"
               className="text-mono-50/60 dark:text-mono-500/80 hover:text-mono-50 dark:hover:text-mono-500 transition-all duration-200"
