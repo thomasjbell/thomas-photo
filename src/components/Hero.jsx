@@ -49,14 +49,14 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold my-4">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold my-4 tracking-wide">
                   THOMAS J BELL
                 </h1>
               </motion.div>
             </div>
             <div className="max-w-md ml-auto">
               <motion.div
-                className="flex flex-col gap-16 mt-16 items-end"
+                className="flex flex-col gap-16 mt-16 items-end tracking-widest"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}

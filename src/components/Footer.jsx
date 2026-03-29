@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Bird } from "lucide-react";
+import { Mail } from "lucide-react";
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
@@ -125,15 +125,14 @@ export default function Footer() {
           <div className="flex space-x-6 mt-4 md:mt-0">
             <motion.a
               target="_blank"
-              href="https://equalab.uk/"
+              href="mailto:thomas@thomasjbell.co.uk"
               className="text-mono-300 hover:text-mono-200 transition-colors duration-250"
               whileHover={{ scale: 1.1, rotate: 3 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="sr-only">EquaLab</span>
-              <Bird width={24} height={24} fill="currentColor" />
+              <span className="sr-only">Email</span>
+              <Mail />
             </motion.a>
-
             <motion.a
               target="_blank"
               href="https://www.instagram.com/thomas.j.bell/"

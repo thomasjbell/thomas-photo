@@ -312,22 +312,26 @@ export const photographyItems = [
 export const projectItems = [
   {
     id: 1,
-    title: "EquaLab Equations",
-    description: "A prototype web app for equation solving and calculations.",
-    imagePath: "/images/projects/equalab-equations.png",
-    technologies: ["Next.js", "React", "Tailwind CSS"],
-    liveUrl: "https://equations.equalab.uk",
-    githubUrl: "https://github.com/thomasjbell/equalab-equations",
+    title: "Thomas J Bell",
+    description: "Personal portfolio built with Next.js and Tailwind CSS.",
+    imagePath: "/images/background.JPG",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    links: [
+      { label: "You are Here!", href: "https://thomasjbell.co.uk", variant: "slate" },
+    ],
   },
+  // ...add more projects the same way
+  // omit a link entry entirely if there's no live url or no github
   {
     id: 2,
-    title: "Portfolio Website",
-    description:
-      "A modern, responsive portfolio showcasing photography and projects.",
-    imagePath: "/images/projects/portfolio.jpg",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://www.thomasjbell.co.uk",
-    githubUrl: null,
+    title: "EquaLab Equations",
+    description: "Database and solver for Physics and Maths equations.",
+    imagePath: "/images/projects/equalab-equations.png",
+    technologies: ["Supabase", "Next.js", "Tailwind CSS"],
+    links: [
+      { label: "View Live", href: "https://equations.equalab.uk/", variant: "slate" },
+      { label: "GitHub", href: "https://github.com/thomasjbell/equalab-equations", variant: "outline" },
+    ],
   },
-  // Add more projects as needed
+  
 ];
