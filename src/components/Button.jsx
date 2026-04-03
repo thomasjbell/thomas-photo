@@ -1,4 +1,4 @@
-// components/Button.jsx
+"use client";
 import Link from "next/link";
 import { forwardRef } from "react";
 import { motion } from "motion/react";
@@ -6,17 +6,8 @@ import { motion } from "motion/react";
 const MotionLink = motion.create(Link);
 
 const Button = forwardRef(
-  (
-    {
-      children,
-      className = "",
-      variant = "slate",
-      size = "medium",
-      href,
-      ...props
-    },
-    ref
-  ) => {
+  ({ children, className = "", variant = "slate", size = "medium", href, ...props }, ref) => {
+
     const baseStyle = {
       display: "inline-flex",
       alignItems: "center",
@@ -29,6 +20,7 @@ const Button = forwardRef(
     };
 
     const variantStyles = {
+      // Hero buttons
       slate: {
         backgroundColor: "var(--color-foreground)",
         color: "var(--color-background)",
@@ -46,9 +38,22 @@ const Button = forwardRef(
         backgroundColor: "transparent",
         color: "var(--color-foreground)",
       },
+      // Card buttons — use className for Tailwind dark mode support
+      mono: {},
+      "mono-outline": {},
+    };
+
+    const variantClassNames = {
+      slate: "",
+      secondary: "",
+      outline: "",
+      ghost: "",
+      mono: "bg-mono-500 dark:bg-mono-100 text-mono-50 dark:text-mono-500 hover:bg-mono-400 dark:hover:bg-mono-50",
+      "mono-outline": "border-2 border-mono-300 dark:border-mono-200 text-mono-400 dark:text-mono-200 hover:border-mono-500 hover:text-mono-500 dark:hover:border-mono-50 dark:hover:text-mono-50",
     };
 
     const sizeClasses = {
+      card: "py-2 px-4 text-md",
       small: "py-4 px-4 text-sm",
       medium: "py-6 px-2 text-3xl font-bold",
       large: "py-8 px-8 text-lg",
@@ -77,7 +82,6 @@ const Button = forwardRef(
       },
     };
 
-    // Shimmer overlay — slides across on hover
     const shimmer = (
       <motion.span
         aria-hidden
@@ -101,11 +105,18 @@ const Button = forwardRef(
       </>
     );
 
+    const combinedClassName = `
+      ${sizeClasses[size]}
+      ${variantClassNames[variant]}
+      transition-colors duration-200
+      ${className}
+    `.trim();
+
     if (href) {
       return (
         <MotionLink
           href={href}
-          className={`${sizeClasses[size]} ${className}`}
+          className={combinedClassName}
           style={styles}
           ref={ref}
           {...motionProps}
@@ -118,7 +129,7 @@ const Button = forwardRef(
 
     return (
       <motion.button
-        className={`${sizeClasses[size]} ${className}`}
+        className={combinedClassName}
         style={styles}
         ref={ref}
         {...motionProps}

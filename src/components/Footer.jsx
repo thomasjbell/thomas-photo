@@ -45,16 +45,16 @@ export default function Footer() {
           animate={isInView ? "visible" : "hidden"}
         >
           <motion.div variants={itemVariants}>
-            <h3 className="text-3xl md:text-5xl font-bold mb-4 text-mono-200">
+            <h3 className="text-3xl md:text-5xl font-bold mb-4 text-mono-100 dark:text-mono-200">
               Thomas J Bell
             </h3>
             <p className="text-base md:text-lg text-mono-200 dark:text-mono-300">
-              Student, engineer, animator, photographer
+              Student, Engineer, Animator, Photographer
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-mono-200/95">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-mono-100/95 dark:text-mono-200/95">
               Contact Info
             </h3>
             <address className="not-italic">
@@ -79,7 +79,7 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-mono-200/95">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-mono-100/95 dark:text-mono-200/95">
               Quick Links
             </h3>
             <ul className="space-y-2">
