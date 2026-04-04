@@ -7,7 +7,7 @@ export const metadata = generateSEOMetadata({
   title: "About Thomas J Bell | Engineering Student & Photographer",
   description: "Learn about Thomas J Bell, an engineering and materials science student from Milton Keynes who specializes in landscape, wildlife, and automotive photography.",
   keywords: ["Thomas Bell", "photographer", "engineering student", "materials science", "Milton Keynes", "biography"],
-  url: "/about",
+  url: "/bio",
   image: "/images/thomas-bell.png",
   type: "profile",
 });

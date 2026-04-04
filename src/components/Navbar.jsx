@@ -76,7 +76,7 @@ const navItems = [
     ),
   },
   {
-    href: "/about",
+    href: "/bio",
     label: "Bio",
     icon: (
       <svg

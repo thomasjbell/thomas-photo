@@ -1,4 +1,4 @@
-// src/app/photography/layout.jsx
+// src/app/projects/layout.jsx
 import Navbar from "@/components/Navbar";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import { generateMetadata as generateSEOMetadata } from "@/utils/seo";
@@ -13,8 +13,8 @@ export const metadata = generateSEOMetadata({
     "blender projects",
     "3d rendering"
   ],
-  url: "/photography",
-  image: "/photography/bluebell-wood.png",
+  url: "/projects",
+  image: "/projects/equalab-equations.png",
 });
 
 const breadcrumbItems = [

@@ -17,7 +17,7 @@ const mobilePanels = [
     image: "/images/background.JPG",
   },
   {
-    href: "/about",
+    href: "/bio",
     label: "BIO",
     image: "/images/thomas-bell.png",
   },
@@ -61,13 +61,29 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
               >
-                <Button href="/projects" variant="outline" size="medium" className="flex-none w-80">
+                <Button
+                  href="/projects"
+                  variant="outline"
+                  size="medium"
+                  className="flex-none w-80"
+                >
                   PROJECTS
                 </Button>
-                <Button href="/photography" prefetch={true} variant="outline" size="medium" className="flex-none w-64">
+                <Button
+                  href="/photography"
+                  prefetch={true}
+                  variant="outline"
+                  size="medium"
+                  className="flex-none w-64"
+                >
                   PHOTO
                 </Button>
-                <Button href="/about" variant="outline" size="medium" className="flex-none w-48">
+                <Button
+                  href="/bio"
+                  variant="outline"
+                  size="medium"
+                  className="flex-none w-48"
+                >
                   BIO
                 </Button>
               </motion.div>
@@ -78,8 +94,6 @@ export default function Hero() {
 
       {/* ── Mobile — full-screen image panels ── */}
       <div className="flex flex-col md:hidden h-screen">
-      
-
         {/* Three equal-height image panels */}
         <div className="flex flex-col flex-1 gap-0.5 overflow-hidden">
           {mobilePanels.map((panel, index) => (
@@ -117,8 +131,18 @@ export default function Hero() {
 
                 {/* Right-side chevron */}
                 <div className="absolute right-5 top-1/2 -translate-y-1/2 text-white/60">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  <svg
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </div>
               </Link>

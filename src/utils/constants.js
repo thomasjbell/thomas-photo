@@ -317,7 +317,11 @@ export const projectItems = [
     imagePath: "/images/background.JPG",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     links: [
-      { label: "You are Here!", href: "https://thomasjbell.co.uk", variant: "slate" },
+      {
+        label: "You are Here!",
+        href: "https://thomasjbell.co.uk",
+        variant: "slate",
+      },
     ],
   },
   // ...add more projects the same way
@@ -329,9 +333,157 @@ export const projectItems = [
     imagePath: "/images/projects/equalab-equations.png",
     technologies: ["Supabase", "Next.js", "Tailwind CSS"],
     links: [
-      { label: "View Live", href: "https://equations.equalab.uk/", variant: "slate" },
-      { label: "GitHub", href: "https://github.com/thomasjbell/equalab-equations", variant: "outline" },
+      {
+        label: "View Live",
+        href: "https://equations.equalab.uk/",
+        variant: "slate",
+      },
+      {
+        label: "GitHub",
+        href: "https://github.com/thomasjbell/equalab-equations",
+        variant: "outline",
+      },
     ],
   },
-  
+  {
+    id: 3,
+    title: "Car Reveal Video",
+    description: "Video for STEM Racing team Silverstone Revolution Racing",
+    imagePath: "/images/projects/blender-env.jpg",
+    technologies: ["Blender", "Cycles", "DaVinci Resolve"],
+    links: [
+      // links will appear on the card, and  under the heading on the slug page
+    ],
+    // slug is the URL: /projects/blender-environment
+    slug: "car-reveal",
+    // content blocks render in order on the detail page
+    content: [
+      {
+        type: "heading",
+        text: "Overview",
+      },
+      {
+        type: "text",
+        text: "I produced this video using Blender and DaVinci Resolve for the STEM Racing I was a part of, Silverstone Revolution Racing. The CAD models were created by the team, which I used, along with lights and cameras in the Blender environment. All keyframing and animating was done in Blender, then colour graded in DaVinci Resolve for final export.",
+      },
+      {
+        type: "video",
+        src: "/videos/car-reveal.mp4",
+        caption: "Final Video for Instagram",
+      },
+
+      {
+        type: "heading",
+        text: "Environments",
+      },
+      {
+        type: "image",
+        src: "/images/projects/car-reveal-env-1.png",
+        alt: "Simple photo studio environment with car",
+        caption: "First Environment - Simple photo studio with car",
+      },
+      {
+        type: "image",
+        src: "/images/projects/car-reveal-env-2.png",
+        alt: "Track and car environment for realism",
+        caption: "Second Environment - More realistic, with the track",
+      },
+      {
+        type: "text",
+        text: "The terrain mesh is driven entirely by noise nodes feeding into a displacement modifier. Vegetation is scattered using a custom weight-painted density map baked from slope and altitude data.",
+      },
+
+      {
+        type: "gallery",
+        images: [
+          {
+            src: "/images/projects/blender-env-clay.jpg",
+            alt: "Clay render",
+            caption: "Clay render",
+          },
+          {
+            src: "/images/projects/blender-env-wire.jpg",
+            alt: "Wireframe",
+            caption: "Wireframe",
+          },
+          {
+            src: "/images/projects/blender-env-nodes.jpg",
+            alt: "Node graph",
+            caption: "Geometry nodes graph",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Car Static Renders",
+    description: "Video for STEM Racing team Silverstone Revolution Racing",
+    imagePath: "/images/projects/blender-env.jpg",
+    technologies: ["Blender", "Cycles", "DaVinci Resolve"],
+    links: [
+      // links will appear on the card, and  under the heading on the slug page
+    ],
+    // slug is the URL: /projects/blender-environment
+    slug: "car-reveal",
+    // content blocks render in order on the detail page
+    content: [
+      {
+        type: "heading",
+        text: "Overview",
+      },
+      {
+        type: "text",
+        text: "I produced this video using Blender and DaVinci Resolve for the STEM Racing I was a part of, Silverstone Revolution Racing. The CAD models were created by the team, which I used, along with lights and cameras in the Blender environment. All keyframing and animating was done in Blender, then colour graded in DaVinci Resolve for final export.",
+      },
+      {
+        type: "video",
+        src: "/videos/car-reveal.mp4",
+        caption: "Final Video for Instagram",
+      },
+
+      {
+        type: "heading",
+        text: "Environments",
+      },
+      {
+        type: "image",
+        src: "/images/projects/car-reveal-env-1.png",
+        alt: "Simple photo studio environment with car",
+        caption: "First Environment - Simple photo studio with car",
+      },
+      {
+        type: "image",
+        src: "/images/projects/car-reveal-env-2.png",
+        alt: "Track and car environment for realism",
+        caption: "Second Environment - More realistic, with the track",
+      },
+      {
+        type: "text",
+        text: "The terrain mesh is driven entirely by noise nodes feeding into a displacement modifier. Vegetation is scattered using a custom weight-painted density map baked from slope and altitude data.",
+      },
+
+      {
+        type: "gallery",
+        images: [
+          {
+            src: "/images/projects/blender-env-clay.jpg",
+            alt: "Clay render",
+            caption: "Clay render",
+          },
+          {
+            src: "/images/projects/blender-env-wire.jpg",
+            alt: "Wireframe",
+            caption: "Wireframe",
+          },
+          {
+            src: "/images/projects/blender-env-nodes.jpg",
+            alt: "Node graph",
+            caption: "Geometry nodes graph",
+          },
+        ],
+      },
+    ],
+  },
+  // projects without a slug just won't show a detail link
 ];

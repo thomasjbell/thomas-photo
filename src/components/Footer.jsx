@@ -103,7 +103,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className={linksClass}>
+                <Link href="/bio" className={linksClass}>
                   About
                 </Link>
               </li>
