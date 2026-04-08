@@ -1,37 +1,46 @@
-// src/app/sitemap.js
-import { photographyItems } from '../utils/constants';
+import { photographyItems, projectItems } from '../utils/constants';
 import { siteConfig } from '../config/seo';
 
 export default function sitemap() {
   const baseUrl = siteConfig.url;
-  
-  // Static pages with their priorities and change frequencies
-  const routes = [
+  const now = new Date();
+
+  const staticRoutes = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'weekly',
-      priority: 1,
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/photography`,
-      lastModified: new Date(),
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/projects`,
+      lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: new Date(),
+      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
   ];
 
-  return [...routes];
+  // Dynamic project detail pages — only included if the project has a slug
+  const projectRoutes = projectItems
+    .filter((p) => p.slug)
+    .map((p) => ({
+      url: `${baseUrl}/projects/${p.slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }));
+
+  return [...staticRoutes, ...projectRoutes];
 }

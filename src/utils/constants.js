@@ -349,7 +349,7 @@ export const projectItems = [
     id: 3,
     title: "Car Reveal Video",
     description: "Video for STEM Racing team Silverstone Revolution Racing",
-    imagePath: "/images/projects/blender-env.jpg",
+    imagePath: "/images/projects/car-reveal-thumb.png",
     technologies: ["Blender", "Cycles", "DaVinci Resolve"],
     links: [
       // links will appear on the card, and  under the heading on the slug page
@@ -377,42 +377,26 @@ export const projectItems = [
         text: "Environments",
       },
       {
+        type: "text",
+        text: "The environments are sets for the 3D models. They allow you to place objects as you would in real life, then light them and position cameras for absolute realism. For this project, I used two environments in order to create a more engaging video. The second, trackside environment gave me something to make fast edits to, which also reminds the viewer what the car would look like in a race.",
+      },
+      {
         type: "image",
-        src: "/images/projects/car-reveal-env-1.png",
+        src: "/images/projects/car-reveal-env1.png",
         alt: "Simple photo studio environment with car",
         caption: "First Environment - Simple photo studio with car",
       },
       {
+        type: "text",
+        text: "These renders of the environments show how much difference the DaVinci Resolve colour grading made to the raw Blender output.",
+      },
+      {
         type: "image",
-        src: "/images/projects/car-reveal-env-2.png",
+        src: "/images/projects/car-reveal-env2.png",
         alt: "Track and car environment for realism",
         caption: "Second Environment - More realistic, with the track",
       },
-      {
-        type: "text",
-        text: "The terrain mesh is driven entirely by noise nodes feeding into a displacement modifier. Vegetation is scattered using a custom weight-painted density map baked from slope and altitude data.",
-      },
-
-      {
-        type: "gallery",
-        images: [
-          {
-            src: "/images/projects/blender-env-clay.jpg",
-            alt: "Clay render",
-            caption: "Clay render",
-          },
-          {
-            src: "/images/projects/blender-env-wire.jpg",
-            alt: "Wireframe",
-            caption: "Wireframe",
-          },
-          {
-            src: "/images/projects/blender-env-nodes.jpg",
-            alt: "Node graph",
-            caption: "Geometry nodes graph",
-          },
-        ],
-      },
+      
     ],
   },
   {

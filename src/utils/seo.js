@@ -1,4 +1,3 @@
-// src/utils/seo.js
 import { siteConfig, defaultSEO } from '../config/seo';
 
 export function generateMetadata({
@@ -9,12 +8,14 @@ export function generateMetadata({
   url,
   type = 'website',
   noIndex = false,
+  publishedTime,
 }) {
-  const seoTitle = title ? `${title} | ${siteConfig.name}` : defaultSEO.title;
+  const seoTitle = title
+    ? `${title} | ${siteConfig.name}`
+    : defaultSEO.title;
   const seoDescription = description || defaultSEO.description;
   const seoImage = image || defaultSEO.openGraph.images[0].url;
   const seoUrl = url ? `${siteConfig.url}${url}` : siteConfig.url;
-  
   const allKeywords = [...defaultSEO.keywords, ...keywords].join(', ');
 
   return {
@@ -45,6 +46,7 @@ export function generateMetadata({
       siteName: siteConfig.name,
       title: seoTitle,
       description: seoDescription,
+      ...(publishedTime && { publishedTime }),
       images: [
         {
           url: seoImage,

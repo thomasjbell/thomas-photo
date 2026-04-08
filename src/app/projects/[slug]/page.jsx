@@ -14,10 +14,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const project = projectItems.find((p) => p.slug === params.slug);
   if (!project) return {};
-  return {
-    title: `${project.title} — Thomas J Bell`,
+  return generateSEOMetadata({
+    title: project.title,
     description: project.description,
-  };
+    url: `/projects/${project.slug}`,
+    image: project.imagePath,
+    type: 'article',
+    keywords: project.technologies,
+  });
 }
 
 function ContentBlock({ block }) {
