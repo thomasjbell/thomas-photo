@@ -2,9 +2,9 @@ import { notFound } from "next/navigation";
 import { projectItems } from "../../../utils/constants";
 import Image from "next/image";
 import Breadcrumbs from "../../../components/Breadcrumbs";
-import { ProjectDetailSchema } from "../../../components/StructuredData";
+import ContentBlocks from "../../../components/ContentBlocks";
+import { generateMetadata as generateSEOMetadata } from "../../../utils/seo";
 
-// Generates static routes at build time for each slug
 export async function generateStaticParams() {
   return projectItems
     .filter((p) => p.slug)
@@ -12,103 +12,22 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const project = projectItems.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = projectItems.find((p) => p.slug === slug);
   if (!project) return {};
   return generateSEOMetadata({
     title: project.title,
     description: project.description,
     url: `/projects/${project.slug}`,
     image: project.imagePath,
-    type: 'article',
+    type: "article",
     keywords: project.technologies,
   });
 }
 
-function ContentBlock({ block }) {
-  switch (block.type) {
-    case "heading":
-      return (
-        <h2 className="text-2xl font-bold text-mono-500 dark:text-mono-50 mt-10 mb-3">
-          {block.text}
-        </h2>
-      );
-
-    case "text":
-      return (
-        <p className="text-base text-mono-400 dark:text-mono-200 leading-relaxed mb-4">
-          {block.text}
-        </p>
-      );
-
-    case "image":
-      return (
-        <figure className="my-6">
-          <div className="relative w-full rounded-2xl overflow-hidden">
-            <Image
-              src={block.src}
-              alt={block.alt}
-              width={1200}
-              height={800}
-              className="w-full h-auto object-contain"
-            />
-          </div>
-          {block.caption && (
-            <figcaption className="mt-2 text-center text-sm text-mono-300 dark:text-mono-300">
-              {block.caption}
-            </figcaption>
-          )}
-        </figure>
-      );
-
-    case "video":
-      return (
-        <figure className="my-6">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-black">
-            <video
-              src={block.src}
-              controls
-              className="w-full h-auto"
-              preload="metadata"
-            />
-          </div>
-          {block.caption && (
-            <figcaption className="mt-2 text-center text-sm text-mono-300 dark:text-mono-300">
-              {block.caption}
-            </figcaption>
-          )}
-        </figure>
-      );
-
-    case "gallery":
-      return (
-        <div className="my-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {block.images.map((img, i) => (
-            <figure key={i} className="rounded-2xl overflow-hidden">
-              <div className="relative aspect-video">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              {img.caption && (
-                <figcaption className="mt-1.5 text-center text-xs text-mono-300 dark:text-mono-300">
-                  {img.caption}
-                </figcaption>
-              )}
-            </figure>
-          ))}
-        </div>
-      );
-
-    default:
-      return null;
-  }
-}
-
-export default function ProjectDetailPage({ params }) {
-  const project = projectItems.find((p) => p.slug === params.slug);
+export default async function ProjectDetailPage({ params }) {
+  const { slug } = await params;
+  const project = projectItems.find((p) => p.slug === slug);
   if (!project) notFound();
 
   const crumbs = [
@@ -174,11 +93,8 @@ export default function ProjectDetailPage({ params }) {
 
         {/* Content blocks */}
         <div className="bg-white dark:bg-mono-500 border border-mono-200 dark:border-mono-400 rounded-2xl p-6 md:p-10 drop-shadow-lg">
-          {project.content?.map((block, i) => (
-            <ContentBlock key={i} block={block} />
-          ))}
+          <ContentBlocks blocks={project.content} />
         </div>
-
       </div>
     </section>
   );
