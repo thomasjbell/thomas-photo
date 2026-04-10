@@ -6,9 +6,7 @@ import ContentBlocks from "../../../components/ContentBlocks";
 import { generateMetadata as generateSEOMetadata } from "../../../utils/seo";
 
 export async function generateStaticParams() {
-  return projectItems
-    .filter((p) => p.slug)
-    .map((p) => ({ slug: p.slug }));
+  return projectItems.filter((p) => p.slug).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }) {
@@ -79,9 +77,10 @@ export default async function ProjectDetailPage({ params }) {
                 rel="noopener noreferrer"
                 className={`
                   px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors duration-200
-                  ${link.variant === "slate"
-                    ? "bg-mono-500 dark:bg-mono-100 text-mono-50 dark:text-mono-500 hover:bg-mono-400"
-                    : "border-2 border-mono-300 dark:border-mono-200 text-mono-400 dark:text-mono-200 hover:border-mono-500 hover:text-mono-500 dark:hover:border-mono-50 dark:hover:text-mono-50"
+                  ${
+                    link.variant === "slate"
+                      ? "bg-mono-500 dark:bg-mono-100 text-mono-50 dark:text-mono-500 hover:bg-mono-400"
+                      : "border-2 border-mono-300 dark:border-mono-200 text-mono-400 dark:text-mono-200 hover:border-mono-500 hover:text-mono-500 dark:hover:border-mono-50 dark:hover:text-mono-50"
                   }
                 `}
               >

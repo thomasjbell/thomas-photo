@@ -141,7 +141,7 @@ export default function Navbar() {
         {/* Desktop Floating Vertical Navbar */}
         <motion.nav
           style={{ x: springX }}
-          className="flex flex-col items-center py-6 px-2 gap-3 rounded-2xl backdrop-blur-md bg-mono-500 dark:bg-mono-50 shadow-lg shadow-mono-300/20 dark:shadow-mono-500/40"
+          className="flex flex-col items-center py-6 px-2 gap-3 rounded-2xl backdrop-blur-md bg-mono-50 shadow-lg shadow-mono-300/50 dark:shadow-mono-500/40"
         >
           {/* Logo */}
           <motion.div
@@ -149,11 +149,11 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="mb-2"
           >
-            <Logo className="fill-mono-50 dark:fill-mono-500" />
+            <Logo className="fill-mono-500" />
           </motion.div>
 
           {/* Divider */}
-          <div className="w-8 h-px bg-mono-400/40 dark:bg-mono-200/30 rounded-full mb-1" />
+          <div className="w-8 h-pxbg-mono-200/30 rounded-full mb-1" />
 
           {/* Nav links */}
           {navItems.map((item) => {
@@ -172,8 +172,8 @@ export default function Navbar() {
                     flex items-center justify-center w-12 h-12 rounded-xl transition-colors duration-200
                     ${
                       isActive
-                        ? "bg-mono-50/20 dark:bg-mono-500/20 text-mono-50 dark:text-mono-500 border border-mono-50/30 dark:border-mono-500/30"
-                        : "text-mono-50/60 dark:text-mono-500/60 border border-transparent hover:text-mono-50 dark:hover:text-mono-500 hover:bg-mono-50/10 dark:hover:bg-mono-500/10 hover:border-mono-50/20 dark:hover:border-mono-500/20"
+                        ? "bg-mono-500/20 text-mono-500 border border-mono-500/30"
+                        : "text-mono-500/60 border border-transparent hover:text-mono-500 hover:bg-mono-500/10 hover:border-mono-500/20"
                     }
                   `}
                   >
@@ -191,11 +191,11 @@ export default function Navbar() {
                       transition={{ duration: 0.15, ease: "easeOut" }}
                       className="absolute left-[calc(100%+12px)] pointer-events-none"
                     >
-                      <span className="whitespace-nowrap text-md font-semibold px-3 py-1.5 rounded-lg bg-mono-500 dark:bg-mono-50 text-mono-50 dark:text-mono-500 shadow-lg shadow-mono-300/20 dark:shadow-mono-500/30">
+                      <span className="whitespace-nowrap text-md font-semibold px-3 py-1.5 rounded-lg bg-mono-50 text-mono-500 shadow-lg shadow-mono-500/30">
                         {item.label}
                       </span>
                       {/* Arrow pointing left */}
-                      <span className="absolute right-full top-1/2 -translate-y-1/2 border-4 border-transparent border-r-mono-500 dark:border-r-mono-50" />
+                      <span className="absolute right-full top-1/2 -translate-y-1/2 border-4 border-transparent border-r-mono-50" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -204,7 +204,7 @@ export default function Navbar() {
           })}
 
           {/* Divider */}
-          <div className="w-8 h-px bg-mono-400/40 dark:bg-mono-200/30 rounded-full mt-1" />
+          <div className="w-8 h-px bg-mono-200/60 rounded-full mt-1" />
 
           {/* Social links */}
           <div className="flex flex-col items-center gap-6 mt-2">
@@ -212,7 +212,7 @@ export default function Navbar() {
               href="https://instagram.com/thomas.j.bell"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-mono-50/60 dark:text-mono-500/80 hover:text-mono-50 dark:hover:text-mono-500 transition-all duration-200"
+              className="text-mono-500/80 hover:text-mono-500 transition-all duration-200"
               aria-label="Instagram"
               whileHover={{ scale: 1.1, rotate: 3 }}
               whileTap={{ scale: 0.95 }}
@@ -226,7 +226,7 @@ export default function Navbar() {
               href="https://linkedin.com/in/thomasbell2"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-mono-50/60 dark:text-mono-500/80 hover:text-mono-50 dark:hover:text-mono-500 transition-all duration-200"
+              className="text-mono-500/80 hover:text-mono-500 transition-all duration-200"
               aria-label="LinkedIn"
               whileHover={{ scale: 1.1, rotate: 3 }}
               whileTap={{ scale: 0.95 }}
@@ -240,7 +240,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Horizontal Navbar */}
-      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-mono-50/80 dark:bg-mono-500/80 border-b border-mono-200/50 dark:border-mono-400/30 shadow-sm">
+      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-mono-500/80 border-b border-mono-400/30 shadow-sm">
         <div className="flex items-center justify-between px-4 h-14">
           {/* Logo + name */}
           <Link href="/" className="flex items-center gap-2.5">
@@ -248,9 +248,9 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.15 }}
             >
-              <Logo className="fill-mono-500 dark:fill-mono-50 h-6 w-6" />
+              <Logo className="fill-mono-50 h-6 w-6" />
             </motion.div>
-            <span className="font-bold font-fira text-lg tracking-widest text-mono-500 dark:text-mono-50">
+            <span className="font-bold font-fira text-lg tracking-widest text-mono-50">
               THOMAS J BELL
             </span>
           </Link>

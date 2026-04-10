@@ -1,3 +1,4 @@
+// src/app/projects/ProjectsClient.jsx
 "use client";
 import { useState, useEffect } from "react";
 import { projectItems } from "../../utils/constants";
@@ -70,7 +71,7 @@ export default function ProjectsClient() {
                   duration: 0.35,
                   ease: "easeOut",
                 }}
-                className="flex flex-col overflow-hidden bg-mono-50 border border-mono-200 dark:border-0 dark:bg-mono-400 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300"
+                className="flex flex-col overflow-hidden bg-mono-50 border border-mono-200 dark:border-0 dark:bg-mono-400/80 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300"
               >
                 {/* ... existing card content ... */}
                 {item.slug ? (
