@@ -21,7 +21,7 @@ export const siteConfig = {
 
 export const defaultSEO = {
   title: "Thomas J Bell | Photographer, Engineer & Creative",
-  description: "Personal portfolio of Thomas J Bell — photographer, engineer, and creative based in Milton Keynes, England. Showcasing landscape, wildlife, and automotive photography alongside engineering and Blender projects.",
+  description: "Personal portfolio of Thomas J Bell - photographer, engineer, and creative based in Milton Keynes, England. Showcasing landscape, wildlife, and automotive photography alongside engineering and Blender projects.",
   keywords: [
     "Thomas J Bell",
     "photography",
@@ -59,7 +59,7 @@ export const defaultSEO = {
 export const pageSEO = {
   home: {
     title: "Thomas J Bell | Photographer, Engineer & Creative",
-    description: "Welcome to the portfolio of Thomas J Bell — photographer, engineer, animator, and creative based in Milton Keynes.",
+    description: "Welcome to the portfolio of Thomas J Bell - photographer, engineer, animator, and creative based in Milton Keynes.",
     keywords: ["portfolio", "personal website", "photographer", "engineer"],
   },
   photography: {
@@ -70,13 +70,13 @@ export const pageSEO = {
   },
   projects: {
     title: "Projects",
-    description: "Engineering, web development, and 3D art projects by Thomas J Bell — from Next.js websites to Blender renders.",
+    description: "Engineering, web development, and 3D art projects by Thomas J Bell - from Next.js websites to Blender renders.",
     keywords: ["projects", "Blender", "3D art", "Next.js", "web development", "engineering"],
     url: "/projects",
   },
   bio: {
     title: "Bio",
-    description: "About Thomas J Bell — engineering student, photographer, animator, and creative based in Milton Keynes, Buckinghamshire.",
+    description: "About Thomas J Bell - engineering student, photographer, animator, and creative based in Milton Keynes, Buckinghamshire.",
     keywords: ["about", "bio", "engineering student", "photographer"],
     url: "/about",
   },
