@@ -402,7 +402,7 @@ export const projectItems = [
   {
     id: 4,
     title: "Car Static Renders",
-    description: "Video for STEM Racing team Silverstone Revolution Racing",
+    description: "Static renders for STEM Racing team Silverstone Revolution Racing",
     imagePath: "/images/projects/blender-env.jpg",
     technologies: ["Blender", "Cycles", "DaVinci Resolve"],
     links: [

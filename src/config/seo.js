@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Thomas J Bell",
-  description: "Personal portfolio of Thomas J Bell — photographer, engineer, and creative based in Milton Keynes, England.",
+  description: "Personal portfolio of Thomas J Bell - photographer, engineer, and creative based in Milton Keynes, England.",
   url: "https://www.thomasjbell.co.uk",
   author: "Thomas J Bell",
   email: "thomas@thomasjbell.co.uk",
