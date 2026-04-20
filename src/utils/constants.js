@@ -5,7 +5,7 @@ export const photographyItems = [
     id: 1,
     title: "Windmill Sunset",
     imagePath: "/photography/windmill.png",
-    aspectRatio: 1.5,
+    aspectRatio: 0.667,
   },
   {
     id: 2,
@@ -155,7 +155,7 @@ export const photographyItems = [
     id: 26,
     title: "Toyota Trueno",
     imagePath: "/photography/trueno.png",
-    aspectRatio: 1.5,
+    aspectRatio: 1.93,
   },
   {
     id: 27,
@@ -396,13 +396,13 @@ export const projectItems = [
         alt: "Track and car environment for realism",
         caption: "Second Environment - More realistic, with the track",
       },
-      
     ],
   },
   {
     id: 4,
     title: "Car Static Renders",
-    description: "Static renders for STEM Racing team Silverstone Revolution Racing",
+    description:
+      "Static renders for STEM Racing team Silverstone Revolution Racing",
     imagePath: "/images/projects/blender-env.jpg",
     technologies: ["Blender", "Cycles", "DaVinci Resolve"],
     links: [
