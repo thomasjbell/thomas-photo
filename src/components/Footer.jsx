@@ -36,7 +36,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-mono-400 text-mono-300 dark:bg-mono-500 dark:text-mono-300 py-12 border-t border-mono-400">
+    <footer className="relative z-10 bg-mono-400 text-mono-300 dark:bg-mono-500 dark:text-mono-300 py-12 border-t border-mono-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"

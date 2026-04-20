@@ -183,7 +183,7 @@ export default function PhotographyClient() {
         )}
       </AnimatePresence>
 
-      <section className="py-8 bg-mono-50 dark:bg-mono-500" id="photography">
+      <section className="py-8" id="photography">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="text-center mb-8 md:mb-12 bg-white dark:bg-mono-500 border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg rounded-2xl">
             <h1 className="text-4xl font-black text-slate-900 dark:text-mono-200 mb-4">

@@ -41,7 +41,7 @@ export default function ProjectsClient() {
     <>
       <LoadingScreen isLoading={isLoading} />
 
-      <section className="py-8 bg-mono-50 dark:bg-mono-500" id="projects">
+      <section className="py-8" id="projects">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Header */}
           <motion.div

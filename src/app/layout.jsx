@@ -6,6 +6,7 @@ import { PersonSchema, WebsiteSchema } from "@/components/StructuredData";
 import { generateMetadata as generateSEOMetadata } from "@/utils/seo";
 import { Nunito, Fira_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
+import BackgroundPattern from "@/components/BackgroundPattern";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -70,8 +71,11 @@ export default function RootLayout({ children }) {
       </head>
       <DarkModeProvider>
         <body className="min-h-screen flex flex-col bg-mono-50 dark:bg-mono-500 text-slate-900 dark:text-slate-50">
+          <BackgroundPattern />
           <Navbar />
-          <main className="flex-grow md:pt-0 pt-14">{children}</main>
+          <main className="relative z-10 flex-grow pt-14 md:pt-0">
+            {children}
+          </main>
           <Footer />
         </body>
       </DarkModeProvider>

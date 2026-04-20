@@ -254,7 +254,7 @@ export default function BioClient() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="min-h-screen bg-mono-50 dark:bg-mono-500 py-8"
+      className="min-h-screen py-8"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
