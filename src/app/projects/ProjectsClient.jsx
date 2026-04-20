@@ -48,7 +48,7 @@ export default function ProjectsClient() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="text-center mb-8 md:mb-12 bg-white dark:bg-mono-500 border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg rounded-2xl"
+            className="text-center mb-8 md:mb-12 bg-white dark:bg-mono-500/50 backdrop-blur-sm border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg rounded-2xl"
           >
             <h1 className="text-4xl font-black text-slate-900 dark:text-mono-200 mb-4">
               PROJECTS
@@ -59,7 +59,7 @@ export default function ProjectsClient() {
           </motion.div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border border-mono-200 dark:border-mono-400 p-4 md:p-6 bg-white dark:bg-mono-500 drop-shadow-lg rounded-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border border-mono-200 dark:border-mono-400 p-4 md:p-6 bg-white dark:bg-mono-500/50 backdrop-blur-sm drop-shadow-lg rounded-2xl">
             {/* 2. Change randomizedItems.map to orderedItems.map */}
             {orderedItems.map((item, index) => (
               <motion.div

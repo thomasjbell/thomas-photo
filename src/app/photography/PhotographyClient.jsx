@@ -185,7 +185,7 @@ export default function PhotographyClient() {
 
       <section className="py-8" id="photography">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="text-center mb-8 md:mb-12 bg-white dark:bg-mono-500 border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg rounded-2xl">
+          <div className="text-center mb-8 md:mb-12 bg-white/50 dark:bg-mono-500/50 backdrop-blur-sm border dark:border-mono-400 border-mono-200 p-6 md:p-8 drop-shadow-lg rounded-2xl">
             <h1 className="text-4xl font-black text-slate-900 dark:text-mono-200 mb-4">
               PHOTOGRAPHY
             </h1>
@@ -195,7 +195,7 @@ export default function PhotographyClient() {
             </p>
           </div>
 
-          <div className="bg-white dark:bg-mono-500 border border-mono-200 dark:border-mono-400 drop-shadow-lg rounded-2xl p-4 md:p-6">
+          <div className="bg-white/50 dark:bg-mono-500/50 backdrop-blur-sm border border-mono-200 dark:border-mono-400 drop-shadow-lg rounded-2xl p-4 md:p-6">
             {/* ref div measures available width */}
             <div ref={containerRef}>
               {layout && (

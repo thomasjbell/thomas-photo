@@ -264,7 +264,7 @@ export default function BioClient() {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="text-center mb-8 md:mb-12"
         >
-          <div className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl">
+          <div className="bg-white dark:bg-mono-500/50 backdrop-blur-sm p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <motion.div
                 className="relative"
@@ -281,7 +281,7 @@ export default function BioClient() {
               </motion.div>
               <div className="flex-1 text-center lg:text-left">
                 <motion.h1
-                  className="text-4xl lg:text-6xl font-black text-slate-900 dark:text-mono-200 mb-4"
+                  className="text-4xl lg:text-6xl font-black text-mono-500 dark:text-mono-200 mb-4"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
@@ -344,7 +344,7 @@ export default function BioClient() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
         >
-          <div className="bg-white dark:bg-mono-500 drop-shadow-lg border border-mono-200 dark:border-mono-400 p-2 rounded-2xl">
+          <div className="bg-white dark:bg-mono-500/50 backdrop-blur-sm drop-shadow-lg border border-mono-200 dark:border-mono-400 p-2 rounded-2xl">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
               {sections.map((section, index) => {
                 const Icon = section.icon;
@@ -391,10 +391,10 @@ export default function BioClient() {
             >
               <motion.div
                 variants={fadeIn}
-                className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl"
+                className="bg-white dark:bg-mono-500/50 backdrop-blur-sm p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl"
               >
                 <motion.h2
-                  className="text-3xl font-bold text-slate-900 dark:text-mono-200 mb-6 text-center"
+                  className="text-3xl font-bold text-mono-500 dark:text-mono-200 mb-6 text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
@@ -414,10 +414,10 @@ export default function BioClient() {
               {/* Hobbies Grid */}
               <motion.div
                 variants={fadeIn}
-                className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl"
+                className="bg-white dark:bg-mono-500/50 backdrop-blur-sm p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl"
               >
                 <motion.h3
-                  className="text-2xl font-bold text-slate-900 dark:text-mono-200 mb-6 text-center"
+                  className="text-2xl font-bold text-mono-500 dark:text-mono-200 mb-6 text-center"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
@@ -448,12 +448,12 @@ export default function BioClient() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-8"
             >
               <motion.div
-                className="bg-white dark:bg-mono-500 p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl"
+                className="bg-white dark:bg-mono-500/50 backdrop-blur-sm p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400 rounded-2xl"
                 whileHover={{ scale: 1.002 }}
                 transition={{ duration: 0.2 }}
               >
                 <motion.h3
-                  className="text-2xl font-bold text-slate-900 dark:text-mono-200 mb-6 flex items-center gap-3"
+                  className="text-2xl font-bold text-mono-500 dark:text-mono-200 mb-6 flex items-center gap-3"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
@@ -488,7 +488,7 @@ export default function BioClient() {
               </motion.div>
 
               <motion.div
-                className="bg-white dark:bg-mono-500 rounded-2xl p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
+                className="bg-white dark:bg-mono-500/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
                 whileHover={{ scale: 1.002 }}
                 transition={{ duration: 0.2 }}
               >
@@ -536,10 +536,10 @@ export default function BioClient() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 1.005 }}
               transition={{ duration: 0.25 }}
-              className="bg-white dark:bg-mono-500 rounded-2xl p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
+              className="bg-white dark:bg-mono-500/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
             >
               <motion.h2
-                className="text-3xl font-bold text-slate-900 dark:text-mono-200 mb-8 text-center"
+                className="text-3xl font-bold text-mono-500 dark:text-mono-200 mb-8 text-center"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
@@ -601,13 +601,13 @@ export default function BioClient() {
             >
               {/* Current Studies */}
               <motion.div
-                className="bg-white dark:bg-mono-500 rounded-2xl p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
+                className="bg-white dark:bg-mono-500/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
                 <motion.h3
-                  className="text-2xl font-bold text-slate-900 dark:text-mono-200 mb-6 flex items-center gap-3"
+                  className="text-2xl font-bold text-mono-500 dark:text-mono-200 mb-6 flex items-center gap-3"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.15 }}
@@ -633,13 +633,13 @@ export default function BioClient() {
 
               {/* Achieved Qualifications */}
               <motion.div
-                className="bg-white dark:bg-mono-500 rounded-2xl p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
+                className="bg-white dark:bg-mono-500/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 drop-shadow-lg border border-mono-200 dark:border-mono-400"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 0.2 }}
               >
                 <motion.h3
-                  className="text-2xl font-bold text-slate-900 dark:text-mono-200 mb-6 flex items-center gap-3"
+                  className="text-2xl font-bold text-mono-500 dark:text-mono-200 mb-6 flex items-center gap-3"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.25 }}
