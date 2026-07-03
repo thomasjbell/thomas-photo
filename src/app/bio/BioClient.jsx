@@ -34,7 +34,7 @@ const profileData = {
     location: "Milton Keynes, Bucks",
     email: "thomas@thomasjbell.co.uk",
     linkedin: "https://www.linkedin.com/in/thomasbell2/",
-    image: "/images/thomas-bell.png",
+    image: "/images/thomas-bell.jpg",
     summary:
       "An enthusiastic, personable and inquisitive student with confident communication skills and a love of learning. I study Engineering, Maths and Physics and am very interested in materials science and experimental/armour defence systems. However, I am fascinated by any kind of advanced technology or engineering projects and love to learn more about physics and tech.",
   },
