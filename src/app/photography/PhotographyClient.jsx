@@ -21,21 +21,18 @@ function Lightbox({ item, onClose }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.25 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
       onClick={onClose}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm px-4"
     >
       <motion.div
-        layoutId={`photo-${item.id}`}
         onClick={(e) => e.stopPropagation()}
+        initial={{ opacity: 0, scale: 0.96 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.96 }}
+        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
         className="relative rounded-2xl overflow-hidden shadow-2xl"
         style={{ maxWidth: "min(90vw, 1400px)", maxHeight: "85vh" }}
-        transition={{
-          type: "spring",
-          stiffness: 400,
-          damping: 40,
-          mass: 1,
-        }}
       >
         <Image
           src={item.imagePath}
@@ -59,7 +56,7 @@ function Lightbox({ item, onClose }) {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 8 }}
-        transition={{ duration: 0.2, delay: 0.1 }}
+        transition={{ duration: 0.18 }}
         className="mt-4 text-white/80 text-sm font-medium tracking-wide pointer-events-none"
       >
         {item.title}
@@ -70,7 +67,7 @@ function Lightbox({ item, onClose }) {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
-        transition={{ duration: 0.2, delay: 0.1 }}
+        transition={{ duration: 0.18 }}
         onClick={onClose}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

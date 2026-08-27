@@ -1,4 +1,4 @@
-// src/app/about/layout.jsx
+// src/app/bio/layout.jsx
 import Navbar from "@/components/Navbar";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import { generateMetadata as generateSEOMetadata } from "@/utils/seo";

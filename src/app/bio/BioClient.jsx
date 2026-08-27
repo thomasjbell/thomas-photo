@@ -1,4 +1,4 @@
-// src/app/about/page.jsx
+// src/app/bio/BioClient.jsx
 "use client";
 import Image from "next/image";
 import { useState } from "react";

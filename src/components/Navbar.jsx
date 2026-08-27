@@ -22,12 +22,12 @@ const navItems = [
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        strokeWidth={1.75}
+        strokeWidth={1.5}
       >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+          d="M3 10.5 12 3l9 7.5M5.25 9.75V19a1 1 0 001 1h4a1 1 0 001-1v-4a1 1 0 011-1h1a1 1 0 011 1v4a1 1 0 001 1h4a1 1 0 001-1V9.75"
         />
       </svg>
     ),
@@ -41,13 +41,12 @@ const navItems = [
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        strokeWidth={1.75}
+        strokeWidth={1.5}
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm10 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zm10 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"
-        />
+        <rect x="3.75" y="3.75" width="7" height="7" rx="1.5" />
+        <rect x="13.25" y="3.75" width="7" height="7" rx="1.5" />
+        <rect x="3.75" y="13.25" width="7" height="7" rx="1.5" />
+        <rect x="13.25" y="13.25" width="7" height="7" rx="1.5" />
       </svg>
     ),
   },
@@ -60,18 +59,14 @@ const navItems = [
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        strokeWidth={1.75}
+        strokeWidth={1.5}
       >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+          d="M4 8a2 2 0 012-2h1.5l1-1.5h7l1 1.5H18a2 2 0 012 2v9a2 2 0 01-2 2H6a2 2 0 01-2-2V8z"
         />
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
-        />
+        <circle cx="12" cy="13" r="3.25" />
       </svg>
     ),
   },
@@ -84,12 +79,13 @@ const navItems = [
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        strokeWidth={1.75}
+        strokeWidth={1.5}
       >
+        <circle cx="12" cy="8" r="3.5" />
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+          d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"
         />
       </svg>
     ),
@@ -97,14 +93,14 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const pathname = usePathname();
+
   // Scroll-hide logic
   const x = useMotionValue(0);
   const springX = useSpring(x, {
-    stiffness: 500, // was 200 — higher = snappier
-    damping: 35, // was 30 — slightly higher to avoid overshoot at speed
+    stiffness: 500,
+    damping: 35,
   });
 
   useEffect(() => {
@@ -119,9 +115,9 @@ export default function Navbar() {
           const scrollingDown = currentScrollY > lastScrollY;
 
           if (atTop || !scrollingDown) {
-            x.set(0); // slide back in
+            x.set(0);
           } else {
-            x.set(-96); // slide out to the left (adjust to match your nav width)
+            x.set(-96);
           }
 
           lastScrollY = currentScrollY;
@@ -137,8 +133,8 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Desktop Floating Vertical Navbar */}
       <div className="hidden md:block fixed left-4 top-1/2 -translate-y-1/2 z-50">
-        {/* Desktop Floating Vertical Navbar */}
         <motion.nav
           style={{ x: springX }}
           className="flex flex-col items-center py-6 px-2 gap-3 rounded-2xl backdrop-blur-md bg-mono-50 shadow-lg shadow-mono-300/50 dark:shadow-mono-500/40"
@@ -153,7 +149,7 @@ export default function Navbar() {
           </motion.div>
 
           {/* Divider */}
-          <div className="w-8 h-pxbg-mono-200/30 rounded-full mb-1" />
+          <div className="w-8 h-px bg-mono-200/30 rounded-full mb-1" />
 
           {/* Nav links */}
           {navItems.map((item) => {
@@ -167,17 +163,31 @@ export default function Navbar() {
               >
                 <Link href={item.href} prefetch={true}>
                   <motion.div
-                    whileTap={{ scale: 0.93 }}
-                    className={`
-                    flex items-center justify-center w-12 h-12 rounded-xl transition-colors duration-200
-                    ${
-                      isActive
-                        ? "bg-mono-500/20 text-mono-500 border border-mono-500/30"
-                        : "text-mono-500/60 border border-transparent hover:text-mono-500 hover:bg-mono-500/10 hover:border-mono-500/20"
-                    }
-                  `}
+                    whileTap={{ scale: 0.95 }}
+                    className="relative flex items-center justify-center w-12 h-12 rounded-xl"
                   >
-                    {item.icon}
+                    <span
+                      className={`transition-colors duration-200 ${
+                        isActive
+                          ? "text-mono-500"
+                          : "text-mono-500/45 hover:text-mono-500/80"
+                      }`}
+                    >
+                      {item.icon}
+                    </span>
+
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-dot-desktop"
+                        transition={{
+                          type: "spring",
+                          stiffness: 420,
+                          damping: 38,
+                          mass: 0.6,
+                        }}
+                        className="absolute right-1 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-mono-500"
+                      />
+                    )}
                   </motion.div>
                 </Link>
 
@@ -185,16 +195,15 @@ export default function Navbar() {
                 <AnimatePresence>
                   {hoveredItem === item.href && (
                     <motion.div
-                      initial={{ opacity: 0, x: -6, scale: 0.95 }}
-                      animate={{ opacity: 1, x: 0, scale: 1 }}
-                      exit={{ opacity: 0, x: -6, scale: 0.95 }}
+                      initial={{ opacity: 0, x: -6 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -6 }}
                       transition={{ duration: 0.15, ease: "easeOut" }}
                       className="absolute left-[calc(100%+12px)] pointer-events-none"
                     >
                       <span className="whitespace-nowrap text-md font-semibold px-3 py-1.5 rounded-lg bg-mono-50 text-mono-500 shadow-lg shadow-mono-500/30">
                         {item.label}
                       </span>
-                      {/* Arrow pointing left */}
                       <span className="absolute right-full top-1/2 -translate-y-1/2 border-4 border-transparent border-r-mono-50" />
                     </motion.div>
                   )}
@@ -242,7 +251,6 @@ export default function Navbar() {
       {/* Mobile Horizontal Navbar */}
       <nav className="md:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-mono-500/80 border-b border-mono-400/30 shadow-sm">
         <div className="flex items-center justify-between px-4 h-14">
-          {/* Logo + name */}
           <Link href="/" className="flex items-center gap-2.5">
             <motion.div
               whileTap={{ scale: 0.95 }}
@@ -255,7 +263,6 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Nav icons */}
           <div className="flex items-center gap-1">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
@@ -263,16 +270,30 @@ export default function Navbar() {
                 <Link key={item.href} href={item.href} prefetch={true}>
                   <motion.div
                     whileTap={{ scale: 0.9 }}
-                    className={`
-                flex items-center justify-center w-10 h-10 rounded-xl transition-colors duration-200
-                ${
-                  isActive
-                    ? "bg-mono-500/10 dark:bg-mono-50/10 text-mono-500 dark:text-mono-50 border border-mono-500/20 dark:border-mono-50/20"
-                    : "text-mono-400 dark:text-mono-200 border border-transparent hover:text-mono-500 dark:hover:text-mono-50 hover:bg-mono-500/5 dark:hover:bg-mono-50/5"
-                }
-              `}
+                    className="relative flex flex-col items-center justify-center w-10 h-10 rounded-xl"
                   >
-                    {item.icon}
+                    <span
+                      className={`transition-colors duration-200 ${
+                        isActive
+                          ? "text-mono-50"
+                          : "text-mono-400 dark:text-mono-200"
+                      }`}
+                    >
+                      {item.icon}
+                    </span>
+
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-dot-mobile"
+                        transition={{
+                          type: "spring",
+                          stiffness: 420,
+                          damping: 38,
+                          mass: 0.6,
+                        }}
+                        className="absolute bottom-0.5 w-1 h-1 rounded-full bg-mono-50"
+                      />
+                    )}
                   </motion.div>
                 </Link>
               );

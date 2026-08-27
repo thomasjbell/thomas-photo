@@ -1,3 +1,4 @@
+// src/app/projects/[slug]/page.jsx
 import { notFound } from "next/navigation";
 import { projectItems } from "../../../utils/constants";
 import Image from "next/image";
